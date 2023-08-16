@@ -1,4 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿internal class Program
+{
+    private static void Main(string[] args)
+    {
+
+
+// See https://aka.ms/new-console-template for more information
 Console.WriteLine("XIN CHAO MON PHAT TRIEN PHAN PHAN");
 
 // Khai báo  biến số và gán giá trị cho biến số đó hiển thị lên màn hình
@@ -22,19 +28,26 @@ const string Hoten = "Le Van Nam";
 const int NamLAMVIEc = 2;
 Console.WriteLine("Nhan vien ten {0} - {1} nam kinh nghiem",Hoten, NamLAMVIEc);
 
-// chuyen doi du lieu
-String str= "123";
-int m = Convert.ToInt32(str);
-System.Console.WriteLine("m= " + m );
+// toan tu nhap 2 so tu ban phim va tinh tong, hieu ,tich,thuong, so vua nhap sau do in ra man hinh
 
-// toan tu nhap 2 so tu ban phim vaf tinh tong so vua nhap sau do in ra man hinh
-int f,w;
-System.Console.Write("f =");
-f = Convert.ToInt32(Console.ReadLine());
-System.Console.Write("w =");
-w= Convert.ToInt32(Console.ReadLine());
-System.Console.WriteLine("{0} + {1} ={2}", f,w, f+w);
-
-
+        int u,v;
+        System.Console.Write("nhap u = ");
+        u = Convert.ToInt32(Console.ReadLine());
+        System.Console.Write("nhap v = ");
+        v = Convert.ToInt32(Console.ReadLine());
+        System.Console.WriteLine("{0} + {1} = {2}", u, v, u+v);
+        System.Console.WriteLine("{0} - {1} = {2}", u, v, u-v);
+        System.Console.WriteLine("{0} * {1} = {2}", u, v, u*v);
+        System.Console.WriteLine("{0} / {1} = {2}", u, v, u/v);
+        System.Console.WriteLine("{0} % {1} = {2}", u, v, u%v);
 
 
+    
+        
+      
+
+
+
+
+    }
+}    
