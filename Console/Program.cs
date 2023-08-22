@@ -151,7 +151,7 @@ for (int i=0; i< 10; i++)
     }
 }
 
-*/ 
+
 // cau truc vong lap white
 public class Program
 {
@@ -164,5 +164,21 @@ while(k < 5)
     System.Console.WriteLine("vong lap thu {0}", k);
     k++;
 }
+    }
+}
+*/ 
+//  cau truc do while
+public class Program
+{
+ private static void Main(string[] args)
+    {
+
+int h=1;
+do
+
+{
+    System.Console.WriteLine("vong lap thu {0}", h);
+    h++;
+} while (h<6);
     }
 }
