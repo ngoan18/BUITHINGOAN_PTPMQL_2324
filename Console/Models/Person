@@ -1,3 +1,4 @@
+
 namespace Console.Models
 {
     public class Person
@@ -5,6 +6,7 @@ namespace Console.Models
         public string IDName { get; set; }
        public string FullName { get; set; }
        public string Address { get; set; } 
+       public int Age { get; set; }
        public void EnterData()
        {
         System.Console.Write("ID name = ");
@@ -13,10 +15,12 @@ namespace Console.Models
         FullName = Console.ReadLine();
         System.Console.Write("Address = ");
         Address = Console.ReadLine();
+        System.Console.Write("Age = ");
+        Age = Convert.ToInt16(Console.ReadLine());
        }
        public void Display()
        {
-        System.Console.WriteLine("ID {0} - {1} - dia chi {2}",IDName,FullName, Address);
+        System.Console.WriteLine("ID {0} - {1} - dia chi {2} - {3} tuoi",IDName,FullName, Address, Age);
        }
     }
 }
