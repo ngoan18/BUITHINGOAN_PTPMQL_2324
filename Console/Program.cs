@@ -51,7 +51,7 @@ Console.WriteLine("Nhan vien ten {0} - {1} nam kinh nghiem",Hoten, NamLAMVIEc);
         System.Console.WriteLine("{0} % {1} = {2}", u, v, u%v);
     }
 } 
-*/
+
 internal class Program
 {
     private static void Main(string[] args)
@@ -74,4 +74,20 @@ else if (d>=5){
     }
 }
 
-
+*/
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+int p = 10;
+if(p<0){
+    System.Console.WriteLine("{0} la so nguyen am", p);
+} else{
+    if(p%2 ==0) {
+        System.Console.WriteLine("{0} la so nguyen duong chan", p);
+    } else {
+        System.Console.WriteLine("{0} la so nguyen duong le", p);
+    }
+}
+    }
+}
