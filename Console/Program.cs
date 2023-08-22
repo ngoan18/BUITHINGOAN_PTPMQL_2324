@@ -80,6 +80,7 @@ private static void Main(string [] args)
 }
 */
 
+/*
 using Console.Models;
 public class Program 
 {
@@ -90,5 +91,18 @@ public class Program
 		std.EnterData();
 		std.StudentCode = "123456789";
 		std.Display();
+	}
+}
+*/
+
+using Console.Models;
+public class Program 
+{
+    
+	private static void Main(string[] args)
+	{
+		Employee emp = new Employee();
+		emp.EnterData();
+		emp.Display();
 	}
 }
