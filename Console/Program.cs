@@ -138,7 +138,7 @@ switch(day)
 }
     }
 }
-*/ 
+
 // cau truc vong lap for
 public class Program
 {
@@ -151,3 +151,18 @@ for (int i=0; i< 10; i++)
     }
 }
 
+*/ 
+// cau truc vong lap white
+public class Program
+{
+ private static void Main(string[] args)
+    {
+int k=1;
+while(k < 5)
+
+{
+    System.Console.WriteLine("vong lap thu {0}", k);
+    k++;
+}
+    }
+}
