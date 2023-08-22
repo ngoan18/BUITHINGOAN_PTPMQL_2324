@@ -166,7 +166,7 @@ while(k < 5)
 }
     }
 }
-*/ 
+
 //  cau truc do while
 public class Program
 {
@@ -180,5 +180,19 @@ do
     System.Console.WriteLine("vong lap thu {0}", h);
     h++;
 } while (h<6);
+    }
+}
+*/ 
+// lenh break
+public class Program
+{
+ private static void Main(string[] args)
+    {
+
+for (int l=0; l<10; l++)
+{
+    if(l==5) break;
+    System.Console.WriteLine("vong lap thu {0}",l);
+}
     }
 }
