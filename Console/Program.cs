@@ -35,7 +35,7 @@ Console.WriteLine("Nhan vien ten {0} - {1} nam kinh nghiem",Hoten, NamLAMVIEc);
 */
 /// toan tu nhap 2 so tu ban phim va tinh tong, hieu ,tich,thuong, so vua nhap sau do in ra man hinh
 
-internal class Program
+/*internal class Program
 {
     private static void Main(string[] args)
     {
@@ -51,3 +51,27 @@ internal class Program
         System.Console.WriteLine("{0} % {1} = {2}", u, v, u%v);
     }
 } 
+*/
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        float d =7;
+if (d>=8){
+    System.Console.WriteLine("Hoc sinh gioi");
+}   
+else if(d>=6.5){
+    System.Console.WriteLine("Hoc sinh kha");
+} 
+else if (d>=5){
+    System.Console.WriteLine("Hoc sinh trung binh");
+}else if (d>=3.5){
+    System.Console.WriteLine("Hoc sinh kem");
+}else {
+    System.Console.WriteLine("Hoc sinh yeu");
+}   
+
+    }
+}
+
+
