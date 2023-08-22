@@ -1,4 +1,4 @@
-namespace Your_Namespace
+namespace Console.Models
 {
     public class YourClass 
     {
