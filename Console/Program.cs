@@ -7,6 +7,7 @@ private static void Main(string [] args)
     {
     // khoi tao doi tuowng class 
         Person ps1 = new Person();
+        Person ps2 = new Person();
         Employee em1 = new Employee();
         Student st1 = new Student();
         Fruit fr1 = new Fruit();
@@ -14,7 +15,13 @@ private static void Main(string [] args)
     ps1.IDName = "MH01";
     ps1.FullName ="Ta Bao Han";
     ps1.Address = "Ha Noi";
-    ps1.Age = "20";
+    ps1.Age = 22;
+
+    // gan gia tri thuoc tinh p2
+    ps2.IDName = "MH02";
+    ps2.FullName ="Ta Van Kiet";
+    ps2.Address = "Nam Dinh";
+    ps2.Age = 35;
     // gan gia tri cho thuc tinh em1
     em1.Manhanvien = "NV02";
     em1.Tennhanvien = "Hoang ha";
@@ -32,6 +39,7 @@ private static void Main(string [] args)
 
     //goi phuong thuc thuc hien
     ps1.Display();
+    ps2.Display();
     em1.Display();
     st1.Display();
     fr1.Display();
