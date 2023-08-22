@@ -74,7 +74,7 @@ else if (d>=5){
     }
 }
 
-*/
+
 internal class Program
 {
     private static void Main(string[] args)
@@ -89,5 +89,30 @@ if(p<0){
         System.Console.WriteLine("{0} la so nguyen duong le", p);
     }
 }
+    }
+}
+*/
+//nhap vao 2 ky tu so sanhs 2 so va in ra ket qua man hinh
+public class Program
+{
+ private static void Main(string[] args)
+    {
+int m,n;
+System.Console.WriteLine("nhap m");
+m = Convert.ToInt32(Console.ReadLine());
+System.Console.WriteLine("nhap n");
+n = Convert.ToInt32(Console.ReadLine());
+ if (m > n)
+            {
+                System.Console.WriteLine("{0} lớn hơn {1}", m,n);
+            }
+            else if (m < n)
+            {
+                System.Console.WriteLine("{0} nhỏ hơn {1}", m, n);
+            }
+            else
+            {
+                System.Console.WriteLine("{0} bằng {1}", m, n);
+            }
     }
 }
