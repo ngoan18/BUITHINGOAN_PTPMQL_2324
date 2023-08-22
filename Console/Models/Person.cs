@@ -2,11 +2,11 @@
 namespace Console.Models
 {
     public class Person
-    {
+    {   
         public string IDName { get; set; }
        public string FullName { get; set; }
        public string Address { get; set; } 
-       public int Age { get; set; }
+       public string Age { get; set; }
        public void EnterData()
        {
         System.Console.Write("ID name = ");
@@ -16,7 +16,7 @@ namespace Console.Models
         System.Console.Write("Address = ");
         Address = Console.ReadLine();
         System.Console.Write("Age = ");
-        Age = Convert.ToInt16(Console.ReadLine());
+        Age = Console.ReadLine();
        }
        public void Display()
        {

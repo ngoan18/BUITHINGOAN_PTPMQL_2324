@@ -1,5 +1,4 @@
-﻿
-using Console.Models;
+﻿using Console.Models;
 public class Program 
 {
 
@@ -12,6 +11,7 @@ private static void Main(string [] args)
     ps1.IDName = "MH01";
     ps1.FullName ="Ta Bao Han";
     ps1.Address = "Ha Noi";
+    ps1.Age = "20";
     //goi phuong thuc thuc hien
     ps1.Display();
     ps2.Display();
