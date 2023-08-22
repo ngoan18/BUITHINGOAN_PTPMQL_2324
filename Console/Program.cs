@@ -1,11 +1,12 @@
-﻿using System.Threading.Tasks.Dataflow;
+﻿/*
+using System.Threading.Tasks.Dataflow;
 using Console.Models;
 public class Program 
 {
 
 private static void Main(string [] args)
     {
-    // khoi tao doi tuowng class 
+   // khoi tao doi tuowng class 
         Person ps1 = new Person();
         Person ps2 = new Person();
         Person ps = new Person();
@@ -35,6 +36,13 @@ private static void Main(string [] args)
     em1.Tennhanvien = "Hoang ha";
     em1.Tuoi = "15";
     em1.Luong = "320"; 
+
+     // Khai bao hai bien va gan gia tri
+    String st = "Nguyen van luc";
+    String m ="160";
+    System.Console.WriteLine("{0} sinh nam {1}",st , em1.GetToLower(m));
+
+
     // gan gia tri cho thuoc tinh st1
     st1.Masinhvien = "SV01";
     st1.Tensinhvien ="Nam truong";
@@ -65,7 +73,22 @@ private static void Main(string [] args)
     st1.Display();
     fr1.Display();
     sv1.Display();
-    /*gpt.Giaiptb1();*/
+    /*gpt.Giaiptb1();
     gpt.Giaiptb2();
+    
     }
+}
+*/
+
+using Console.Models;
+public class Program 
+{
+    
+	private static void Main(string[] args)
+	{
+		Student std = new Student();
+		std.EnterData();
+		std.StudentCode = "123456789";
+		std.Display();
+	}
 }

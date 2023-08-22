@@ -1,25 +1,21 @@
 namespace Console.Models;
-public class Student
+public class Student : Person
 {
-       public string Masinhvien { get; set; }
-        public string Tensinhvien { get; set; }
-        public string Tuoi { get; set; }
-        public string Khoa { get; set; }
-   public void EnterData()
+public string StudentCode { get; set; }
+        public void EnterData()
     {
-        System.Console.Write("Ma sinh vien =");
-        Masinhvien = System.Console.ReadLine();
-        System.Console.Write("Ten sinh vien =");
-        Tensinhvien = System.Console.ReadLine();
-        System.Console.Write("Tuoi =");
-        Tuoi = System.Console.ReadLine();
-        System.Console.Write("Khoa =");
-        Khoa = System.Console.ReadLine();
+        //ke thua phuong thuc class Person
+        base.EnterData();
+        // phat trien nhap thong tin Student code
+        System.Console.Write("Student Code = ");
+        StudentCode = System.Console.ReadLine();
     }
-    public void Display()
+        public void Display()
     {
-        System.Console.WriteLine("{0}-{1}-{2} tuoi- Khoa {3}", Masinhvien, Tensinhvien, Tuoi, Khoa);
+        //Ke thua lai pt class Person
+        base.Display();
+        //hien thi nhap thong tin Student code
+        System.Console.Write("Ma sinh vien: {0}", StudentCode);
     }
-
-
 }
+
