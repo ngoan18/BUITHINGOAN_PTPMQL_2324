@@ -182,7 +182,6 @@ do
 } while (h<6);
     }
 }
-*/ 
 // lenh break
 public class Program
 {
@@ -194,5 +193,19 @@ for (int l=0; l<10; l++)
     if(l==5) break;
     System.Console.WriteLine("vong lap thu {0}",l);
 }
+    }
+}
+*/
+// lenh continue
+public class Program
+{
+ private static void Main(string[] args)
+    {
+for (int j=0; j<10; j++)
+{
+    if(j==5) continue;
+    System.Console.WriteLine("vong lap thu {0}",j);
+}
+
     }
 }
