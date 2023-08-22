@@ -13,6 +13,7 @@ private static void Main(string [] args)
         Student st1 = new Student();
         Fruit fr1 = new Fruit();
         Sinhvien sv1 =new Sinhvien();
+        Giaipt gpt = new Giaipt();
     // gan gia tri cho thuoc tinh ps1
     ps1.IDName = "MH01";
     ps1.FullName ="Ta Bao Han";
@@ -50,6 +51,10 @@ private static void Main(string [] args)
     sv1.Tuoi = 18;
     sv1.sdt = "039797124";
 
+    // gan gia tri cho thuoc tinh gpt
+    gpt.a = 2;
+    gpt.b = 10;
+
 
     //goi phuong thuc thuc hien
     ps1.Display();
@@ -59,5 +64,6 @@ private static void Main(string [] args)
     st1.Display();
     fr1.Display();
     sv1.Display();
+    gpt.Giaiptb1();
     }
 }
