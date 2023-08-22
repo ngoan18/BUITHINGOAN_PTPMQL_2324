@@ -116,7 +116,7 @@ n = Convert.ToInt32(Console.ReadLine());
             }
     }
 }
-*/
+// Cau lenh switch-case
 public class Program
 {
  private static void Main(string[] args)
@@ -135,6 +135,18 @@ switch(day)
     System.Console.WriteLine("Khong phai ngay trong tuan");
     break;
 
+}
+    }
+}
+*/ 
+// cau truc vong lap for
+public class Program
+{
+ private static void Main(string[] args)
+    {
+for (int i=0; i< 10; i++)
+{
+    System.Console.WriteLine("vong lap thu {0}", i);
 }
     }
 }
