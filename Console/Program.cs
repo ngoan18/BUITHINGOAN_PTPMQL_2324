@@ -95,6 +95,7 @@ public class Program
 }
 */
 
+/*
 using Console.Models;
 public class Program 
 {
@@ -104,5 +105,18 @@ public class Program
 		Employee emp = new Employee();
 		emp.EnterData();
 		emp.Display();
+	}
+}
+*/
+
+using Console.Models;
+public class Program 
+{
+    
+	private static void Main(string[] args)
+	{
+		Teacher tea = new Teacher();
+		tea.EnterData();
+		tea.Display();
 	}
 }
