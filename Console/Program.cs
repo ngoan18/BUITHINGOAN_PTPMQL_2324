@@ -11,6 +11,7 @@ private static void Main(string [] args)
         Employee em1 = new Employee();
         Student st1 = new Student();
         Fruit fr1 = new Fruit();
+        Sinhvien sv1 =new Sinhvien();
     // gan gia tri cho thuoc tinh ps1
     ps1.IDName = "MH01";
     ps1.FullName ="Ta Bao Han";
@@ -37,11 +38,19 @@ private static void Main(string [] args)
     fr1.Ten= "CAM";
     fr1.Soluong = "15";
 
+    // gan gia tri cho thuoc tinh sv1
+    sv1.hoten ="Bui Ngoc Anh";
+    sv1.diachi = "Hai Ba Trung";
+    sv1.Tuoi = 18;
+    sv1.sdt = "039797124";
+
+
     //goi phuong thuc thuc hien
     ps1.Display();
     ps2.Display();
     em1.Display();
     st1.Display();
     fr1.Display();
+    sv1.Display();
     }
 }
