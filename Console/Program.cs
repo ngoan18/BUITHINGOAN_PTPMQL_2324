@@ -54,6 +54,7 @@ private static void Main(string [] args)
     // gan gia tri cho thuoc tinh gpt
     gpt.a = 2;
     gpt.b = 10;
+    gpt.c = 6;
 
 
     //goi phuong thuc thuc hien
@@ -64,6 +65,7 @@ private static void Main(string [] args)
     st1.Display();
     fr1.Display();
     sv1.Display();
-    gpt.Giaiptb1();
+    /*gpt.Giaiptb1();*/
+    gpt.Giaiptb2();
     }
 }
