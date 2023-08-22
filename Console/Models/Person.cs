@@ -18,9 +18,18 @@ namespace Console.Models
         System.Console.Write("Age = ");
         Age = Convert.ToInt32(System.Console.ReadLine());;
        }
+         public int GetYearOfBirth(int Age)
+        {
+            int yearOfBirth = 2023 - Age;
+            return yearOfBirth;
+        }
        public void Display()
        {
         System.Console.WriteLine("ID {0}-Ten:{1} - dia chi {2} - {3} tuoi",IDName,FullName, Address, Age);
+       }
+        public void Display2(string FullName, int Age)
+       {
+        System.Console.WriteLine("Sinh vien {0} - {1} tuoi", FullName, Age);
        }
     }
 }

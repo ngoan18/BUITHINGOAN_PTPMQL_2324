@@ -8,6 +8,7 @@ private static void Main(string [] args)
     // khoi tao doi tuowng class 
         Person ps1 = new Person();
         Person ps2 = new Person();
+        Person ps = new Person();
         Employee em1 = new Employee();
         Student st1 = new Student();
         Fruit fr1 = new Fruit();
@@ -17,6 +18,11 @@ private static void Main(string [] args)
     ps1.FullName ="Ta Bao Han";
     ps1.Address = "Ha Noi";
     ps1.Age = 22;
+    // Khai bao hai bien va gan gia tri
+    String str = "Nguyen van Duy";
+    int a =25;
+    System.Console.WriteLine("{0} sinh nam {1}",str , ps.GetYearOfBirth(a));
+
 
     // gan gia tri thuoc tinh p2
     ps2.IDName = "MH02";
@@ -48,6 +54,7 @@ private static void Main(string [] args)
     //goi phuong thuc thuc hien
     ps1.Display();
     ps2.Display();
+    ps.Display2(str, a);
     em1.Display();
     st1.Display();
     fr1.Display();
