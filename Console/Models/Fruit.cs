@@ -6,13 +6,13 @@ public class Fruit
    public void EnterData()
     {
         System.Console.Write("Ten =");
-        Ten = Console.ReadLine();
+        Ten = System.Console.ReadLine();
         System.Console.Write("Soluong =");
-        Soluong = Console.ReadLine();
+        Soluong = System.Console.ReadLine();
     }
     public void Display()
     {
-        System.Console.Write("{0}-{1}", Ten, Soluong);
+        System.Console.WriteLine("{0}- so luong:{1}", Ten, Soluong);
     }
 
 

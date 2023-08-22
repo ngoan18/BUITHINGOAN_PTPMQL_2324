@@ -8,17 +8,17 @@ public class Student
    public void EnterData()
     {
         System.Console.Write("Ma sinh vien =");
-        Masinhvien = Console.ReadLine();
+        Masinhvien = System.Console.ReadLine();
         System.Console.Write("Ten sinh vien =");
-        Tensinhvien = Console.ReadLine();
+        Tensinhvien = System.Console.ReadLine();
         System.Console.Write("Tuoi =");
-        Tuoi = Console.ReadLine();
+        Tuoi = System.Console.ReadLine();
         System.Console.Write("Khoa =");
-        Khoa = Console.ReadLine();
+        Khoa = System.Console.ReadLine();
     }
     public void Display()
     {
-        System.Console.Write("{0}-{1}-{2} tuoi- Khoa{3}", Masinhvien, Tensinhvien, Tuoi, Khoa);
+        System.Console.WriteLine("{0}-{1}-{2} tuoi- Khoa {3}", Masinhvien, Tensinhvien, Tuoi, Khoa);
     }
 
 

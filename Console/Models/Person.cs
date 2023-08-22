@@ -10,13 +10,13 @@ namespace Console.Models
        public void EnterData()
        {
         System.Console.Write("ID name = ");
-        IDName = Console.ReadLine();
+        IDName = System.Console.ReadLine();
         System.Console.Write("Full name = ");
-        FullName = Console.ReadLine();
+        FullName = System.Console.ReadLine();
         System.Console.Write("Address = ");
-        Address = Console.ReadLine();
+        Address = System.Console.ReadLine();
         System.Console.Write("Age = ");
-        Age = Console.ReadLine();
+        Age = System.Console.ReadLine();
        }
        public void Display()
        {

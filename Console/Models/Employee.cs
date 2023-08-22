@@ -8,17 +8,17 @@ public class Employee
    public void EnterData()
     {
         System.Console.Write("Ma nhan vien =");
-        Manhanvien = Console.ReadLine();
+        Manhanvien = System.Console.ReadLine();
         System.Console.Write("Ten nhan vien =");
-        Tennhanvien = Console.ReadLine();
+        Tennhanvien = System.Console.ReadLine();
         System.Console.Write("Tuoi =");
-        Tuoi = Console.ReadLine();
+        Tuoi = System.Console.ReadLine();
         System.Console.Write("Luong =");
-        Luong = Console.ReadLine();
+        Luong = System.Console.ReadLine();
     }
     public void Display()
     {
-        System.Console.Write("ID {0}-{1}-{2} tuoi -{3} vnd", Manhanvien, Tennhanvien, Tuoi, Luong);
+        System.Console.WriteLine("ID {0}-{1}-{2} tuoi -luong:{3} vnd", Manhanvien, Tennhanvien, Tuoi, Luong);
     }
 
 
