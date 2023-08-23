@@ -125,13 +125,3 @@ public class Program
 }
 
 */
-
-using Console.Models;
-public class  Program
-{
-    Nhansu ten =new Nhansu();
-    Nhansu CV = new Nhansu();
-    Nhansu tuoi = new Nhansu();
-    Nhansu luong = new Nhansu();
-    }
-
