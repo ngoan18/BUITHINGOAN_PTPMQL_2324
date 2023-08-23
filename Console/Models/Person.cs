@@ -16,7 +16,15 @@ namespace Console.Models
         System.Console.Write("Address = ");
         Address = System.Console.ReadLine();
         System.Console.Write("Age = ");
-        Age = Convert.ToInt32(System.Console.ReadLine());;
+          try {
+            // cau lenh co the gay ngoai le
+            Age = Convert.ToInt16(System.Console.ReadLine());
+        } catch(Exception e)
+        {
+            // cau lenh xu ly ngoai le
+            Age = 0;
+        }
+    
        }
          public int GetYearOfBirth(int Age)
         {

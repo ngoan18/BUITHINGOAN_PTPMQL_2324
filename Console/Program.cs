@@ -118,5 +118,8 @@ public class Program
 		Teacher tea = new Teacher();
 		tea.EnterData();
 		tea.Display();
+       Person ps = new Person();
+		ps.EnterData();
+		ps.Display();
 	}
 }
