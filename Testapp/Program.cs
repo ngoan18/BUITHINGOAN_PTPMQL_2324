@@ -1,4 +1,4 @@
-﻿/*
+﻿
 ﻿using Testapp.Models;
 public class Program 
 {
@@ -13,13 +13,17 @@ public class Program
      pr1.Name = "Ha Van Tu";
      pr1.Address = "Nam Dinh";
      pr1.Age = 25;
+    // Khai bao hai bien va gan gia tri
+    String str = "Nguyen van Duy";
+    int a =25;
+    System.Console.WriteLine("{0} sinh nam {1}",str , pr.GetYearOfBirth(a));
     pr.Display();
     pr1.Display();
     }
 }
 
 
-
+/*
 
 
 using Testapp.Models;
@@ -92,7 +96,7 @@ public class Program
 }
 
 
-*/
+
 using Testapp.Models;
 public class Program 
 {
@@ -113,3 +117,5 @@ public class Program
      sv1.Display();
     }
 }
+
+*/
