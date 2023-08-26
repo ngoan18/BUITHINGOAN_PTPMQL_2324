@@ -1,11 +1,12 @@
-﻿public class Program
+﻿using Testapp.Models;
+public class Program 
 {
     private static void Main(string[] args)
     {
-        for (int a=0; a<10; a++)
-    {
-        if(a==5) continue;
-        System.Console.WriteLine("vong lap thu {0}",j);
-    }
+     Person pr = new Person();   
+     pr.Name = "Nguyen hong a";
+     pr.Address = "Ha Noi";
+     pr.Age = 22;
+     pr.Display();
     }
 }
