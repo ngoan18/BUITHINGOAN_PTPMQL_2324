@@ -2,22 +2,27 @@
 {
     private static void Main(string[] args)
     {
-        int a, b;
-        System.Console.Write("a=");
-        a = Convert.ToInt32(Console.ReadLine());
-        System.Console.Write("b=");
-        b = Convert.ToInt32(Console.ReadLine());
-        if (a > b)
-            {
-                System.Console.WriteLine("{0} lớn hơn {1}", a,b);
-            }
-            else if (a < b)
-            {
-                System.Console.WriteLine("{0} nhỏ hơn {1}", a, b);
-            }
-            else
-            {
-                System.Console.WriteLine("{0} bằng {1}", a, b);
-            }
+        float a = 3;
+        if(a>=8)
+        {
+            System.Console.WriteLine("Hoc sinh gioi");
+        }
+        else if(a>= 6.5)
+        {
+            System.Console.WriteLine("Hoc sinh kha");
+        }
+        else if(a>=5)
+        {
+            System.Console.WriteLine("Hoc sinh trung binh");
+        }
+        else if(a>=3.5)
+        {
+            System.Console.WriteLine("Hoc sinh yeu");
+        }
+        else
+        {
+            System.Console.WriteLine("Hoc sinh kem");
+        }
+
     }
 }
