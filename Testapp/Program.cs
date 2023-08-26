@@ -69,7 +69,7 @@ public class Program
     
 }
 
-*/
+
 ﻿using Testapp.Models;
 public class Program 
 {
@@ -88,5 +88,28 @@ public class Program
      emp1. Luong ="2504440000";
      emp1.Display();
      emp.Display();
+    }
+}
+
+
+*/
+using Testapp.Models;
+public class Program 
+{
+    private static void Main(string[] args)
+    {
+    Sinhvien sv = new Sinhvien();  
+    Sinhvien sv1 = new Sinhvien(); 
+    sv.Hoten = "Ca Van Hao";
+    sv.Diachi = "Da Nang";
+    sv.Tuoi = 18;
+    sv.SDT ="0397022573";
+    ////////
+    sv1.Hoten = "Cao Thuy Hao";
+    sv1.Diachi = "HCM";
+    sv1.Tuoi = 28;
+    sv1.SDT ="028374345435";
+     sv.Display();
+     sv1.Display();
     }
 }
