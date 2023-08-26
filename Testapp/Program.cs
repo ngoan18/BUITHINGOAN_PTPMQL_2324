@@ -3,12 +3,10 @@
     private static void Main(string[] args)
     {
    
-    int a=1;
-    do
-
+        for (int a=0; a<10; a++)
     {
-        System.Console.WriteLine("vong lap thu {0}", a);
-        a++;
-    } while (a<6);
+        if(a==5) break;
+        System.Console.WriteLine("vong lap thu {0}",a);
+    }
     }
 }
