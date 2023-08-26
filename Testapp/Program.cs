@@ -1,4 +1,4 @@
-﻿
+﻿/*
 ﻿using Testapp.Models;
 public class Program 
 {
@@ -23,7 +23,7 @@ public class Program
 }
 
 
-/*
+*/
 
 
 using Testapp.Models;
@@ -35,15 +35,13 @@ using Testapp.Models;
     
         {
             Student st = new Student();
-            Student st1 = new Student();
             st.Tensv = "Bui Van Tuan";
             st.Masv = "1721050438";
             st.Khoa = "CNTT";
-            // gan gia tri cho thuoc tinh doi tuong st1
-            st1.Tensv = "Vuong Loc An";
-            st1.Masv = "1938886294";
-            st1.Khoa = "Kinh te";
-            st1.Display();
+            //
+            String str = "Ha Vu Quy";
+            int a = 192105035;
+            st.Display(str,a);
             st.Display();
         }
     }
@@ -51,7 +49,7 @@ using Testapp.Models;
 
 
 
-
+/*
 
 using Testapp.Models;
 public class Program

@@ -13,7 +13,6 @@ namespace Testapp.Models
             Address = Console.ReadLine();
             System.Console.Write("Age");
             Age = Convert.ToInt32(Console.ReadLine());
-
         }
         public int GetYearOfBirth(int Age)
         {

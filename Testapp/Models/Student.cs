@@ -16,7 +16,12 @@ namespace Testapp.Models
         }
         public void Display()
         {
-            System.Console.WriteLine("{0}-MSV: {1}-Khoa:{2}",Masv, Tensv, Khoa);
+            System.Console.WriteLine("{0}-Msv: {1}-Khoa:{2}",Tensv, Masv, Khoa);
         }
+         public void Display(String Tensv, int Masv)
+        {
+            System.Console.WriteLine("{0}-Masv:{1}",Tensv, Masv);
+        }
+
     }
 }
