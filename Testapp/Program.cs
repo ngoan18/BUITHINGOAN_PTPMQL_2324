@@ -1,13 +1,32 @@
-﻿using Testapp.Models;
-public class Program 
+﻿
+using Testapp.Models;
+
+    public class Program 
 {
     private static void Main(string[] args)
     {
-     Employee emp = new Employee();  
-     emp.MaNV =" 1921050439";
-     emp.TenNV =" Nguyen van B";
-     emp.Tuoi = 25;
-     emp. Luong ="250000000";
-     emp.Display();
+    
+        {
+            Student st = new Student();
+            st.Tensv = "Bui Van Tuan";
+            st.Masv = "1721050438";
+            st.Khoa = "CNTT";
+            st.Display();
+        }
     }
+}
+****
+
+using Testapp.Models;
+public class Program
+{
+    private static void Main(string[] args)
+    {
+    Fruit fr = new Fruit();
+    fr.FullName = "Dua";
+    fr.Mau = "Do";
+    fr.Soluong = "32";
+    fr.Display();
+    }
+    
 }
