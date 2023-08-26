@@ -1,4 +1,4 @@
-﻿/*
+﻿
 public class Program
 {
 private static void Main(string[] args)
@@ -10,7 +10,7 @@ private static void Main(string[] args)
     }
 }
 
-
+************
 public class Program
 {
 private static void Main(string[] args)
@@ -23,7 +23,9 @@ private static void Main(string[] args)
         Console.WriteLine("Ket qua =" +ketqua);
     }
 }
-*/
+
+*************
+
 public class Program
 {
     private static void Main(string[] args)
