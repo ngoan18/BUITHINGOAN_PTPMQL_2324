@@ -10,13 +10,13 @@ namespace Testapp.Models
         public void EnterData()
         {
             System.Console.WriteLine("MaNV");
-            MaNV = Console.ReadLine();
+            MaNV = System.Console.ReadLine();
             System.Console.WriteLine("TenNV");
-            TenNV = Console.ReadLine();
+            TenNV = System.Console.ReadLine();
             System.Console.WriteLine("Tuoi");
-            Tuoi = Convert.ToInt32(Console.ReadLine());
+            Tuoi = Convert.ToInt32(System.Console.ReadLine());
             System.Console.WriteLine("Luong");
-            Luong = Console.ReadLine();
+            Luong = System.Console.ReadLine();
         }
         public void Display()
         {

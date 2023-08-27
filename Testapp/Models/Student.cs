@@ -8,11 +8,11 @@ namespace Testapp.Models
         public void EnterData()
         {
             System.Console.Write("Tensv");
-            Tensv = Console.ReadLine();
+            Tensv = System.Console.ReadLine();
             System.Console.Write("Masv");
-            Masv = Console.ReadLine();
+            Masv = System.Console.ReadLine();
             System.Console.Write("Khoa");
-            Khoa = Console.ReadLine();
+            Khoa = System.Console.ReadLine();
         }
         public void Display()
         {

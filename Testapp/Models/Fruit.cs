@@ -14,11 +14,11 @@ public class Fruit
     {
 
         System.Console.Write("FullName =");
-        FullName = Console.ReadLine();
+        FullName = System.Console.ReadLine();
         System.Console.Write("Mau");
-        Mau= Console.ReadLine();
+        Mau= System.Console.ReadLine();
         System.Console.Write("Soluong =");
-        Soluong = Console.ReadLine();
+        Soluong = System.Console.ReadLine();
 
     }
 

@@ -9,13 +9,13 @@ namespace Testapp.Models
         public void Data()
         {
             System.Console.Write("Hoten");
-            Hoten = Console.ReadLine();
+            Hoten = System.Console.ReadLine();
             System.Console.Write("Diachi");
-            Diachi = Console.ReadLine();
+            Diachi = System.Console.ReadLine();
             System.Console.Write("Tuoi");
-            Tuoi = Convert.ToInt32(Console.ReadLine());
+            Tuoi = Convert.ToInt32(System.Console.ReadLine());
             System.Console.Write("SDT");
-            SDT = Console.ReadLine();
+            SDT = System.Console.ReadLine();
         }
         public  void Display()
         {
