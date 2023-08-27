@@ -11,10 +11,12 @@ public class Sinhvien
         hoten = System.Console.ReadLine();
         System.Console.Write("diachi =");
         diachi = System.Console.ReadLine();
-        System.Console.Write("Tuoi =");
-        Tuoi = Convert.ToInt32(System.Console.ReadLine());;
         System.Console.Write("Luong =");
         sdt = System.Console.ReadLine();
+        System.Console.Write("Tuoi =");
+
+        
+        Tuoi = Convert.ToInt32(System.Console.ReadLine());;
     }
     public void Display()
     {
