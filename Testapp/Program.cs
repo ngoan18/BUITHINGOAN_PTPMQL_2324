@@ -7,37 +7,37 @@ using Testapp.Models;
 		int n=0;
 		do
 		{
-		System.Console.Write("Nhap so sinh vien :");
+		System.Console.Write("Nhan vien :");
 		n = Convert.ToInt32(System.Console.ReadLine());
 		} while (n<0);
-		Customer[] ctmArr = new Customer[n];
+		Employee[] empArr = new Employee[n];
 		// nhap thong tin sinh vien
-			for (int i = 0; i < ctmArr.Length; i++)
+			for (int i = 0; i < empArr.Length; i++)
 			{
 			System.Console.WriteLine("Nhap phan tu thu : {0} ",i);
-			Customer ctm = new Customer();
-			ctm.Nhapthongtin();
-			ctmArr[i] = ctm;
+			Employee emp = new Employee();
+			emp.input();
+			empArr[i] = emp;
 			}
 		// hien thi man hinh
-		foreach(Customer ctm in ctmArr)
+		foreach(Employee emp in empArr)
 		{
-			ctm.Hienthi();
+			emp.Hienthi();
 		}
 		// sua thong tin
 
-		foreach(Customer ctm in ctmArr)
+		foreach(Employee ctm in empArr)
 		{
-			System.Console.WriteLine("stdArr.Name");
-			Student stdupdate = new Student();
-			stdupdate.Display();
+			System.Console.WriteLine("empArr.TenNV");
+			Employee emp = new Employee();
+			emp.Hienthi();
 		}
 		// xoa thong tin
 
-			foreach(Customer ctm in ctmArr)
+			foreach(Employee emp in empArr)
 		{
-			ctm.Email= null;
-			ctm.Hienthi();
+			emp.TenNV= null;
+			emp.Hienthi();
 		}
 	}
     

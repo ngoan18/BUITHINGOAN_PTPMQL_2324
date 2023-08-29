@@ -1,21 +1,37 @@
-
-namespace Testapp.Models;
-public class Employee : Person
+namespace Testapp.Models
 {
-public string EmployeeCode { get; set; }
-        public void EnterData()
+    public class Employee
     {
-        //ke thua phuong thuc class Person
-        base.EnterData();
-        // phat trien nhap thong tin Employee code
-        System.Console.Write("Employee Code = ");
-        EmployeeCode = System.Console.ReadLine();
+        public string MaNV;
+        public string TenNV;
+        public int Tuoi;
+        public string Luong;
+        public Employee()
+    
+        {
+            MaNV = "MN1";
+            TenNV = " La Van Ca";
+            Tuoi = 23;
+            Luong ="1500000";
+        }
+        public void input()
+        {
+            System.Console.WriteLine("MaNV");
+            MaNV = Console.ReadLine();
+            System.Console.WriteLine("TenNV");
+            TenNV = Console.ReadLine();
+            System.Console.WriteLine("Tuoi");
+            Tuoi = Convert.ToInt32(Console.ReadLine());
+            System.Console.WriteLine("Luong");
+            Luong = Console.ReadLine();
+        }
+        public void Hienthi()
+        {
+            System.Console.WriteLine("MSV:{0}-{1}-{2} tuoi-{3} vnd",MaNV,TenNV, Tuoi, Luong);
+        }
+
+
     }
-        public void Display()
-    {
-        //Ke thua lai pt class Person
-        base.Display();
-        //hien thi nhap thong tin Eployee code
-        System.Console.Write("Ma nhan vien: {0}", EmployeeCode);
-    }
+
+
 }
