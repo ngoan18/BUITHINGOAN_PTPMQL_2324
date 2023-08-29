@@ -1,20 +1,29 @@
-namespace Testapp.Models;
-public class Student : Person
+namespace Testapp.Models
 {
-public string StudentCode { get; set; }
-        public void EnterData()
+   public class Student
     {
-        //ke thua phuong thuc class Person
-        base.EnterData();
-        // phat trien nhap thong tin Student code
-        System.Console.Write("Student Code = ");
-        StudentCode = System.Console.ReadLine();
+        public string Tensv;
+        public int Tuoi;
+        public string Khoa;
+    public Student()
+    {
+        Tensv = "Bui Nam A";
+        Tuoi = 0;
+        Khoa = "CNTT";
     }
+        public void input()
+        {
+            System.Console.Write("Tensv =");
+            Tensv = System.Console.ReadLine();
+            System.Console.Write("Tuoi =");
+            Tuoi = Convert.ToInt32(System.Console.ReadLine());
+            System.Console.Write("Khoa =");
+            Khoa = System.Console.ReadLine();
+        }
         public void Display()
-    {
-        //Ke thua lai pt class Person
-        base.Display();
-        //hien thi nhap thong tin Student code
-        System.Console.Write("Ma sinh vien: {0}", StudentCode);
+        {
+            System.Console.WriteLine("{0}-Tuoi:{1}-Khoa:{2}",Tensv,Tuoi, Khoa);
+        }
+
     }
 }
