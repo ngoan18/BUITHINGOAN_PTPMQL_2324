@@ -1,12 +1,13 @@
-﻿using Testapp.Models;
-public class Program
+﻿
+using Testapp.Models;
+public class Program 
 {
-    private static void Main(string[] args)
-    {
-        Giaipt ptb2 = new Giaipt();
-        ptb2.a=2;
-        ptb2.b=5;
-        ptb2.Giaiptb2();
-        
-    }
+
+	private static void Main(string[] args)
+	{
+		Student std = new Student();
+		std.EnterData();
+		std.StudentCode = "123456789";
+		std.Display();
+	}
 }
