@@ -13,7 +13,13 @@ namespace Testapp.Models
             System.Console.Write("Diachi");
             Diachi = System.Console.ReadLine();
             System.Console.Write("Tuoi");
-            Tuoi = Convert.ToInt32(System.Console.ReadLine());
+           try
+           {
+            Tuoi=Convert.ToInt16(Console.ReadLine());
+           }catch (Exception e)
+           {
+            Tuoi = 0;
+           }
             System.Console.Write("SDT");
             SDT = System.Console.ReadLine();
         }

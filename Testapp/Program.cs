@@ -4,8 +4,8 @@ public class Program
     
 	private static void Main(string[] args)
 	{
-        Fruit fr =new Fruit();
-		fr.EnterData();
-		fr.Display();
+        Sinhvien sv = new Sinhvien();
+		sv.Data();
+		sv.Display();
 	}
 }
