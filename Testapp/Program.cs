@@ -1,5 +1,5 @@
-﻿﻿using Testapp.Models;
-
+﻿
+using Testapp.Models;
     public class Program 
 {
     public static void Main(string[] args)
@@ -10,36 +10,37 @@
 		System.Console.Write("Nhap so sinh vien :");
 		n = Convert.ToInt32(System.Console.ReadLine());
 		} while (n<0);
-		Student[] stdArr = new Student[n];
+		Customer[] ctmArr = new Customer[n];
 		// nhap thong tin sinh vien
-			for (int i = 0; i < stdArr.Length; i++)
+			for (int i = 0; i < ctmArr.Length; i++)
 			{
 			System.Console.WriteLine("Nhap phan tu thu : {0} ",i);
-			Student std = new Student();
-			std.input();
-			stdArr[i] =std;
+			Customer ctm = new Customer();
+			ctm.Nhapthongtin();
+			ctmArr[i] = ctm;
 			}
 		// hien thi man hinh
-		foreach(Student std in stdArr)
+		foreach(Customer ctm in ctmArr)
 		{
-			std.Display();
+			ctm.Hienthi();
 		}
 		// sua thong tin
 
-		foreach(Student std in stdArr)
+		foreach(Customer ctm in ctmArr)
 		{
-			System.Console.WriteLine("stdArr.Khoa");
+			System.Console.WriteLine("stdArr.Name");
 			Student stdupdate = new Student();
 			stdupdate.Display();
 		}
 		// xoa thong tin
 
-			foreach(Student std in stdArr)
+			foreach(Customer ctm in ctmArr)
 		{
-			std.Khoa=null;
-			std.Display();
+			ctm.Email= null;
+			ctm.Hienthi();
 		}
-
-    }
-
+	}
+    
+    
+  
 }
