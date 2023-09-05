@@ -10,14 +10,32 @@ using Webmvc.Data;
 namespace Webmvc.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230905023802_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20230905161840_Create_Table_Employee")]
+    partial class Create_Table_Employee
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.10");
+
+            modelBuilder.Entity("Webmvc.Models.Employee", b =>
+                {
+                    b.Property<string>("EmployeeId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("EmployeeName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("EmployeeId");
+
+                    b.ToTable("Employee");
+                });
 
             modelBuilder.Entity("Webmvc.Models.Student", b =>
                 {

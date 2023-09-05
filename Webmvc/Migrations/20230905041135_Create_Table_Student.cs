@@ -11,11 +11,11 @@ namespace Webmvc.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropPrimaryKey(
-                name: "PK_Studdent",
-                table: "Studdent");
+                name: "PK_Student",
+                table: "Student");
 
             migrationBuilder.RenameTable(
-                name: "Studdent",
+                name: "Student",
                 newName: "Student");
 
             migrationBuilder.AddPrimaryKey(
@@ -33,11 +33,11 @@ namespace Webmvc.Migrations
 
             migrationBuilder.RenameTable(
                 name: "Student",
-                newName: "Studdent");
+                newName: "Student");
 
             migrationBuilder.AddPrimaryKey(
-                name: "PK_Studdent",
-                table: "Studdent",
+                name: "PK_Student",
+                table: "Student",
                 column: "StudentID");
         }
     }
