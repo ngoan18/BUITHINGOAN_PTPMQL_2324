@@ -1,10 +1,18 @@
+@model IEnumerable<Webmvc.Models.Student>
+    <p>
+        <a class="btn btn-success" asp-action="Create">Create a new Student</a>
+    </p>
+    <table class="table table-all">
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+        </tr>
+    @foreach (var item in Model)
+    {
+        <tr> 
+            <td>@Html.DisplayFor(m => item.StudentID)</td>
+            <td>@Html.DisplayFor(m => item.Name)</td>
 
-<h1> Student </h1>
-
-<form asp-action="Index">
-    <label>Full Name</label>
-    <Input type="text" name="FullName">
-    <Input type="Submit" value="send">
-</form>
-<h2> @ViewBag.abc </h2>
-
+        </tr>
+    }
+    </table>

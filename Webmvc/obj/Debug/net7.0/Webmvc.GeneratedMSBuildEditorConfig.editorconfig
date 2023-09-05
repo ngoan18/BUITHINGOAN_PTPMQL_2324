@@ -32,16 +32,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[c:/PTPMQL23-24/Webmvc/Views/Student/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [c:/PTPMQL23-24/Webmvc/Views/Student/gptb2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxncHRiMi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/PTPMQL23-24/Webmvc/Views/Student/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/PTPMQL23-24/Webmvc/Views/Tinhluong/Luong.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGluaGx1b25nXEx1b25nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/PTPMQL23-24/Webmvc/Views/_ViewImports.cshtml]

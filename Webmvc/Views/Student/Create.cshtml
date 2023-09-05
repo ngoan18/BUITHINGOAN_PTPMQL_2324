@@ -1,0 +1,31 @@
+@model Webmvc.Models.Student
+<h1> Tao moi 1 sinh vien</h1>
+<hr>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp- for="StudentID" class="control-label"></label>
+                <input asp-action="StudentID" class="form-control">
+                <span asp-validation="StudentID" class="text-danger"></span>
+
+    </div>
+
+     <div class="form-group">
+                <label asp- for="Name" class="control-label"></label>
+                <input asp-action="Name" class="form-control">
+                <span asp-validation="Name" class="text-danger"></span>
+
+    </div>
+    <br>
+    <div class="form-group">
+        <input class="btn-primary" type="submit" value="Save">
+        <a class="btn btn-success" asp-action="Index">Danh sach sinh vien</a>
+
+    </div>
+
+        </form>
+
+    </div>
+</div>
