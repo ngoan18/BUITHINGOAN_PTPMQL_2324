@@ -12,6 +12,10 @@
         <tr>
             <td>@Html.DisplayFor(m => item.FacultyID)</td>
             <td>@Html.DisplayFor(m => item.FacultyName)</td>
+             <td>
+                <a asp-action="Edit" asp-route-id="@item.FacultyID">Sửa</a>
+                <a asp-action="Delete" asp-route-id="@item.FacultyID">Xóa</a>
+            </td>
         </tr>
     }
 
