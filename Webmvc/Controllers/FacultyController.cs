@@ -2,43 +2,35 @@ using Microsoft.AspNetCore.Mvc;
 using Webmvc.Data;
 using Webmvc.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc.Rendering;
 namespace Webmvc.Controllers
 
 {
-    public class StudentController : Controller
+    public class FacultyController : Controller
     {
         private readonly ApplicationDbContext _context;
-        public StudentController(ApplicationDbContext context)
+        public FacultyController(ApplicationDbContext context)
         {
             _context = context;
         }
         public async Task<IActionResult> Index()
         {
-            var model = await _context.Student.ToListAsync();
+            var model = await _context.Faculty.ToListAsync();
             return View(model);
         }
         public IActionResult Create ()
         {
-            ViewData["FacultyID"] = new SelectList(_context.Faculty,"FacultyID","FacultyID");
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create ([Bind("StudentID,Name,FacultyID")] Student std)
+        public async Task<IActionResult> Create(Faculty emt)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(std);
+                _context.Add(emt);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-             ViewData["FacultyID"] = new SelectList(_context.Faculty,"FacultyID","FacultyID",std.FacultyID);
-            return View(std);
-        }
-        private bool StudentExists(string id)
-        {
-            return _context.Student.Any(e => e.StudentID == id);
-
+            return View(emt);
         }
         [HttpPost]
         public async Task<IActionResult> Edit(string id, string name)
@@ -48,33 +40,33 @@ namespace Webmvc.Controllers
                return View("NotFound");
 
             }
-            var student = await _context.Student.FindAsync(id);
-            if (student == null)
+            var faculty = await _context.Faculty.FindAsync(id);
+            if ( faculty== null)
             {
                 return View("NotFound");
 
             }
-            return View(student);
+            return View(faculty);
         }
-
-         [HttpPost]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit (string id, [Bind("StudentId, Name")] Student std)
+        public async Task<IActionResult> Edit (string id, [Bind("FacultyID, FacultyName")] Faculty emt)
         {
-            if (id != std.StudentID)
+               if (id != emt.FacultyID)
             {
                 return View("NotFound");
             }
+
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(std);
+                    _context.Update(emt);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!StudentExists(std.StudentID))
+                    if (!FacultyExists(emt.FacultyID))
                     {
                         return View("NotFound");
                     }
@@ -85,34 +77,38 @@ namespace Webmvc.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(std);
+            return View(emt);
         }
     
-        public async Task<IActionResult>Delete(string id)
+       public async Task<IActionResult>Delete(string id)
         {
             if (id == null)
             {
                return View("NotFound");
 
             }
-            var std = await _context.Student.FirstOrDefaultAsync (m=> m.StudentID == id);
-            if (std == null)
+            var emt = await _context.Faculty.FirstOrDefaultAsync (m=> m.FacultyID== id);
+            if (emt == null)
             {
               return View("NotFound");
 
             }
-            return View(std);
+            return View(emt);
         }
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var std = await _context.Student.FindAsync(id);
-            _context.Student.Remove(std);
+            var emt = await _context.Faculty.FindAsync(id);
+            _context.Faculty.Remove(emt);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index)); 
         }
+        private bool FacultyExists(string id)
+        {
+            return _context.Faculty.Any(e => e.FacultyID == id);
+
+        }
     }
 }
-

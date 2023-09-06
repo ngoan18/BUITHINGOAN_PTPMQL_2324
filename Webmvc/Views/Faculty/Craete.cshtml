@@ -1,0 +1,30 @@
+@model Webmvc.Models.Faculty
+<h1> Tao moi 1 Khoa</h1>
+<hr>
+<div class="row">
+    <div class="col-md-4">
+      <form asp-action="Create">
+         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FacultyID" class="control-label"></label>
+                <input asp-for="FacultyID" class="form-control">
+                <span asp-validation-for="FacultyID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                        <label asp-for="FacultyName" class="control-label"></label>
+                        <input asp-for="FacultyName" class="form-control">
+                        <span asp-validation-for="FacultyName" class="text-danger"></span>
+            </div>
+        
+            <br>
+            <div class="form-group">
+                <input class="btn-primary" type="submit" value="Save">
+                <a class="btn btn-success" asp-action="Index">Danh sach khoa</a>
+
+            </div>
+
+      </form>
+
+    </div>
+</div>

@@ -9,77 +9,93 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Webmvc
 build_property.RootNamespace = Webmvc
-build_property.ProjectDir = c:\PTPMQL23-24\Webmvc\
+build_property.ProjectDir = C:\PTPMQL23-24\Webmvc\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\PTPMQL23-24\Webmvc
+build_property.MSBuildProjectDirectory = C:\PTPMQL23-24\Webmvc
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/PTPMQL23-24/Webmvc/Views/Employee/Create.cshtml]
+[C:/PTPMQL23-24/Webmvc/Views/Employee/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/PTPMQL23-24/Webmvc/Views/Employee/Delete.cshtml]
+[C:/PTPMQL23-24/Webmvc/Views/Employee/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/PTPMQL23-24/Webmvc/Views/Employee/Edit.cshtml]
+[C:/PTPMQL23-24/Webmvc/Views/Employee/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/PTPMQL23-24/Webmvc/Views/Employee/Index.cshtml]
+[C:/PTPMQL23-24/Webmvc/Views/Employee/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/PTPMQL23-24/Webmvc/Views/Home/Index.cshtml]
+[C:/PTPMQL23-24/Webmvc/Views/Faculty/Craete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0eVxDcmFldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PTPMQL23-24/Webmvc/Views/Faculty/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0eVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PTPMQL23-24/Webmvc/Views/Faculty/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0eVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PTPMQL23-24/Webmvc/Views/Faculty/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0eVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PTPMQL23-24/Webmvc/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/PTPMQL23-24/Webmvc/Views/Home/Privacy.cshtml]
+[C:/PTPMQL23-24/Webmvc/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/PTPMQL23-24/Webmvc/Views/Shared/Error.cshtml]
+[C:/PTPMQL23-24/Webmvc/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/PTPMQL23-24/Webmvc/Views/Shared/NotFound.cshtml]
+[C:/PTPMQL23-24/Webmvc/Views/Shared/NotFound.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE5vdEZvdW5kLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/PTPMQL23-24/Webmvc/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/PTPMQL23-24/Webmvc/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/PTPMQL23-24/Webmvc/Views/Student/Create.cshtml]
+[C:/PTPMQL23-24/Webmvc/Views/Student/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/PTPMQL23-24/Webmvc/Views/Student/Delete.cshtml]
+[C:/PTPMQL23-24/Webmvc/Views/Student/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/PTPMQL23-24/Webmvc/Views/Student/Edit.cshtml]
+[C:/PTPMQL23-24/Webmvc/Views/Student/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/PTPMQL23-24/Webmvc/Views/Student/gptb2.cshtml]
+[C:/PTPMQL23-24/Webmvc/Views/Student/gptb2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxncHRiMi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/PTPMQL23-24/Webmvc/Views/Student/Index.cshtml]
+[C:/PTPMQL23-24/Webmvc/Views/Student/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/PTPMQL23-24/Webmvc/Views/_ViewImports.cshtml]
+[C:/PTPMQL23-24/Webmvc/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/PTPMQL23-24/Webmvc/Views/_ViewStart.cshtml]
+[C:/PTPMQL23-24/Webmvc/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/PTPMQL23-24/Webmvc/Views/Shared/_Layout.cshtml]
+[C:/PTPMQL23-24/Webmvc/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-i5nsanov2c

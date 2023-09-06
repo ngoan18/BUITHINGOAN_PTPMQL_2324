@@ -1,7 +1,7 @@
 using Webmvc.Models;
 using Microsoft.EntityFrameworkCore;
-namespace Webmvc.Data
-{
+namespace Webmvc.Data;
+
     public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext (DbContextOptions<ApplicationDbContext> options) : base(options)
@@ -9,6 +9,10 @@ namespace Webmvc.Data
 
         }
         public DbSet<Student> Student { get; set; }
-         public DbSet<Employee> Employee { get; set; }
+        public DbSet<Employee> Employee { get; set; }
+        public DbSet<Webmvc.Models.Faculty> Faculty { get; set; } = default!;
+
+      
+      
+
     }
-}

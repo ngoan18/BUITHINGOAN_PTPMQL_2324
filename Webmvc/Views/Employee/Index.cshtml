@@ -1,43 +1,23 @@
-@model IEnumerable<Wrbmvc.Models.Employee>
-
-@{
-    ViewData["Title"] = "Index";
-}
-
-<h1>Thông tin Employee</h1>
-<table class="table">
-    <thead>
+@model IEnumerable<Webmvc.Models.Employee>
+    <p>
+        <a class="btn btn-success" asp-action="Create"> Creat a new Employee</a>
+    </p>
+    <table class="table table-all">
         <tr>
-             <th>
-                @Html.DisplayNameFor(model => model.EmployeeID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EmployeeName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th></th>
+            <th>EmployeeId</th>
+            <th>FacultyName</th>
         </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmployeeId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmployeeName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.EmployeeId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.EmployeeId">Delete</a>
+            <td>@Html.DisplayFor(m => item.EmployeeId)</td>
+            <td>@Html.DisplayFor(m => item.EmployeeName)</td>
+            <td>@Html.DisplayFor(m => item.Address)</td>
+             <td>
+                <a asp-action="Edit" asp-route-id="@item.EmployeeId">Sửa</a>
+                <a asp-action="Delete" asp-route-id="@item.EmployeeId">Xóa</a>
             </td>
         </tr>
-}
-    </tbody>
-</table>
+    }
+
+    </table>

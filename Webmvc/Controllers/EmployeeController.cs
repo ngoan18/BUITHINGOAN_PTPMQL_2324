@@ -15,7 +15,7 @@ namespace Webmvc.Controllers
         public async Task<IActionResult> Index()
         {
             var model = await _context.Employee.ToListAsync();
-            return View();
+            return View(model);
         }
         public IActionResult Create ()
         {
@@ -40,22 +40,21 @@ namespace Webmvc.Controllers
                return View("NotFound");
 
             }
-            var Employee = await _context.Employee.FindAsync(id);
-            if (Employee == null)
+            var employee = await _context.Employee.FindAsync(id);
+            if (employee == null)
             {
                 return View("NotFound");
 
             }
-            return View(Employee);
+            return View(employee);
         }
-
-         [HttpPost]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit (string id, [Bind("EmployeeId, EmployeeName, Address")] Employee emp)
         {
                if (id != emp.EmployeeId)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             if (ModelState.IsValid)
@@ -67,9 +66,9 @@ namespace Webmvc.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EmployeeExists (emp.EmployeeId))
+                    if (!EmployeeExists(emp.EmployeeId))
                     {
-                        return NotFound();
+                        return View("NotFound");
                     }
                     else
                     {
@@ -101,11 +100,15 @@ namespace Webmvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var std = await _context.Employee.FindAsync(id);
-            _context.Employee.Remove(std);
+            var emp = await _context.Employee.FindAsync(id);
+            _context.Employee.Remove(emp);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index)); 
         }
+        private bool EmployeeExists(string id)
+        {
+            return _context.Employee.Any(e => e.EmployeeId == id);
+
+        }
     }
 }
-
