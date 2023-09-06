@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Webmvc.Data;
 using Webmvc.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 namespace Webmvc.Controllers
 
@@ -19,17 +20,20 @@ namespace Webmvc.Controllers
         }
         public IActionResult Create ()
         {
+            ViewData["CustomerId"] = new SelectList(_context.Customer,"CustomerId","CustomerId");
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(Employee emp)
+        public async Task<IActionResult> Create([Bind("EmployeeId,EmployeeName,Address,CustomerId")] Customer emp)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(emp);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
+               
             }
+            ViewData["CustomerId"] = new SelectList(_context.Faculty, "CustomerId", "CustomerId", emp.CustomerId);
             return View(emp);
         }
         [HttpPost]
