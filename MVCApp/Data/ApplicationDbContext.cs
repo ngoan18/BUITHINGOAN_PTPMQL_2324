@@ -15,6 +15,8 @@ namespace MVCApp.Data.Data
 
         }
         public DbSet<MVCApp.Models.Person> Person { get; set; }
+        public DbSet<MVCApp.Models.Employee> Employee { get; set; } = default!;
+
     }
       
 }
