@@ -10,14 +10,7 @@ public class PersonController : Controller
     [HttpPost]
      public IActionResult Index( Person ps)
     {
-        ViewBag.a= ps.PersonID + "-" + ps.Name + "-" + ps.SDT;
-        return View();
-    }
-   
-    [HttpPost]
-     public IActionResult Create()
-
-    {
+        ViewBag.a= ps.PersonID +"-" + ps.Name +"-" + ps.SDT;
         return View();
     }
 

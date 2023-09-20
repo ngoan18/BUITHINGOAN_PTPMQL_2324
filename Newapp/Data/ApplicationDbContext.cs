@@ -8,13 +8,14 @@ using Newapp.Models;
 
 namespace Newapp.Data
 {
-    public class ApplicationDbContext : DbContext
+     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext (DbContextOptions<ApplicationDbContext> options)
-            : base(options)
+        public ApplicationDbContext (DbContextOptions<ApplicationDbContext> options) : base(options)
         {
-        }
 
+        }
         public DbSet<Newapp.Models.Person> Person { get; set; }
     }
+      
 }
+
