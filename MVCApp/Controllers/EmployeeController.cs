@@ -30,10 +30,11 @@ public class EmployeeController : Controller
     // Create Employee (tra ve view thuc hien them moi 1 csdl)
     public IActionResult Create()
     {
+        ViewData["PersonId"] = new SelectList(_context.Person, "PersonId", "PersonId");
         return View();
     }
     [HttpPost]
-    public async Task<IActionResult> Create([Bind("EmployeeId,Name, SDT,Age,")] Employee emp)
+    public async Task<IActionResult> Create([Bind("EmployeeId,Name, SDT,Age,PersonId")] Employee emp)
     {
         if (ModelState.IsValid)
         {
@@ -41,6 +42,7 @@ public class EmployeeController : Controller
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        ViewData ["PersonId"] = new SelectList (_context.Person,"PersonId", "PersonId", emp.PersonId);
         return View(emp);
     }
 
