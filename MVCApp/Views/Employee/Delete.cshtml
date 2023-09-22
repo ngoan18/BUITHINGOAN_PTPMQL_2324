@@ -1,13 +1,10 @@
 @model IEnumerable<MVCApp.Models.Employee>
-
-@{
-    ViewData["Title"] = "Index";
-}
-
-<h1>Bang thong tin chi tiet </h1>
-
+    @{
+        ViewData["Title"] = "Index";
+    }
+<h1>Bang thong tin chi tiet</h1>
 <p>
-    <a asp-action="Create"> Tao moi 1 nguoi</a>
+    <a asp-action="Create"> Tao moi</a>
 </p>
 <table class="table">
     <thead>
@@ -18,10 +15,10 @@
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-              <th>
+             <th>
                 @Html.DisplayNameFor(model => model.SDT)
             </th>
-             <th>
+              <th>
                 @Html.DisplayNameFor(model => model.Age)
             </th>
             <th></th>
@@ -36,10 +33,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
-             <td>
+            <td>
                 @Html.DisplayFor(modelItem => item.SDT)
             </td>
-            <td>
+             <td>
                 @Html.DisplayFor(modelItem => item.Age)
             </td>
             <br>
