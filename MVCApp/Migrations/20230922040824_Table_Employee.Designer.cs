@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230920043414_Table_Daily")]
-    partial class Table_Daily
+    [Migration("20230922040824_Table_Employee")]
+    partial class Table_Employee
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

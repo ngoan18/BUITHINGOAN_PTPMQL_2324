@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using MVCApp.Models;
+namespace MVCApp.Controllers;
 public class EmployeeController : Controller
 {
     public IActionResult Index()

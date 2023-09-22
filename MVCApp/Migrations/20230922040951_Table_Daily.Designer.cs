@@ -2,6 +2,7 @@
 using MVCApp.Data.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230922040951_Table_Daily")]
+    partial class Table_Daily
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.11");
@@ -67,20 +70,6 @@ namespace MVCApp.Migrations
                     b.HasIndex("PersonId");
 
                     b.ToTable("Employee");
-                });
-
-            modelBuilder.Entity("MVCApp.Models.Hethongphanphoi", b =>
-                {
-                    b.Property<string>("MaHTPP")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("TenHTPP")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("MaHTPP");
-
-                    b.ToTable("Hethongphanphoi");
                 });
 
             modelBuilder.Entity("MVCApp.Models.Person", b =>

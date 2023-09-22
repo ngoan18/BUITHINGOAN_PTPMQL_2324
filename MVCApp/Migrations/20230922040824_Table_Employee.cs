@@ -5,7 +5,7 @@
 namespace MVCApp.Migrations
 {
     /// <inheritdoc />
-    public partial class Table_Hethongphanphoi : Migration
+    public partial class Table_Employee : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
