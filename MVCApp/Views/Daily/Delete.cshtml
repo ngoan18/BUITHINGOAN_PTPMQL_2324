@@ -1,0 +1,48 @@
+@model MVCApp.Models.Daily
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3> Ban chac chan xoa khong</h3>
+<div>
+    <hr />
+    <dl class="row">
+         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Madaily)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Madaily)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tendaily)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tendaily)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Diachi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Diachi)
+        </dd>
+         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nguoidaidien)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nguoidaidien)
+        </dd>
+         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SDT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Madaily" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

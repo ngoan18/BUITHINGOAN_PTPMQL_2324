@@ -114,7 +114,7 @@ public class EmployeeController : Controller
         {
             if (_context.Employee == null)
             {
-                return Problem (" Entity set 'ApplicationDbContext.Person' is null.");
+                return Problem (" Entity set 'ApplicationDbContext.Employee' is null.");
             }
             var emp = await _context.Employee.FindAsync(id);
             if (emp != null)
