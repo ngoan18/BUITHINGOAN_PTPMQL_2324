@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.SignalR.Protocol;
 using Microsoft.EntityFrameworkCore;
 using MVCApp.Data;
 using MVCApp.Models;
 using MVCApp.Models.Process;
+using OfficeOpenXml;
 
 namespace MVCApp.Controllers
 {
@@ -209,7 +211,23 @@ namespace MVCApp.Controllers
                 }
             }
             return View();
-    }
+        }
+        public IActionResult Download()
+        {
+            var fileName = "YourFileName" + ".xlsx";
+            using (ExcelPackage excelPackage =new ExcelPackage())
+            {
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Sheet 1");
+                worksheet.Cells["A1"].Value = "PersomId";
+                worksheet.Cells["B1"].Value = "FullName";
+                worksheet.Cells["C1"].Value = "Address";
+
+                var personList = _context.Person.ToList();
+                worksheet.Cells["A2"].LoadFromCollection(personList);
+                var stream = new MemoryStream(excelPackage.GetAsByteArray());
+                return File (stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+            }
+        }
     }
 }
 
