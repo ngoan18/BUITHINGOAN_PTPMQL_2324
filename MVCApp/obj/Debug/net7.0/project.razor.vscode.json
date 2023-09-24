@@ -24110,6 +24110,31 @@
       "FilePath": "c:\\PTPMQL23-24\\MVCApp\\Views\\Daily\\Index.cshtml",
       "TargetPath": "Views\\Daily\\Index.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\PTPMQL23-24\\MVCApp\\Views\\Hethongphanphoi\\Create.cshtml",
+      "TargetPath": "Views\\Hethongphanphoi\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\PTPMQL23-24\\MVCApp\\Views\\Hethongphanphoi\\Delete.cshtml",
+      "TargetPath": "Views\\Hethongphanphoi\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\PTPMQL23-24\\MVCApp\\Views\\Hethongphanphoi\\Edit.cshtml",
+      "TargetPath": "Views\\Hethongphanphoi\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\PTPMQL23-24\\MVCApp\\Views\\Hethongphanphoi\\Details.cshtml",
+      "TargetPath": "Views\\Hethongphanphoi\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\PTPMQL23-24\\MVCApp\\Views\\Hethongphanphoi\\Index.cshtml",
+      "TargetPath": "Views\\Hethongphanphoi\\Index.cshtml",
+      "FileKind": "mvc"
     }
   ]
 }
