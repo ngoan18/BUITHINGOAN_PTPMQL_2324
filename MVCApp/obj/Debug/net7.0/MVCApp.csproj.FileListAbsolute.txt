@@ -261,3 +261,7 @@ C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
 C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
 C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
+C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\JetBrains.Annotations.dll
+C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\X.PagedList.dll
+C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\X.PagedList.Mvc.Core.dll
+C:\PTPMQL23-24\MVCApp\obj\Debug\net7.0\MVCApp.MvcApplicationPartsAssemblyInfo.cs
