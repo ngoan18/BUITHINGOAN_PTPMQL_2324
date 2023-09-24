@@ -5,24 +5,23 @@
 namespace MVCApp.Migrations
 {
     /// <inheritdoc />
-    public partial class Table_Daily : Migration
+    public partial class Table_Employee : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Daily",
+                name: "Employee",
                 columns: table => new
                 {
-                    Madaily = table.Column<string>(type: "TEXT", nullable: false),
-                    Tendaily = table.Column<string>(type: "TEXT", nullable: false),
-                    Diachi = table.Column<string>(type: "TEXT", nullable: false),
-                    Nguoidaidien = table.Column<string>(type: "TEXT", nullable: false),
-                    SDT = table.Column<string>(type: "TEXT", nullable: false)
+                    EmployeeId = table.Column<string>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", nullable: false),
+                    SDT = table.Column<string>(type: "TEXT", nullable: false),
+                    Age = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Daily", x => x.Madaily);
+                    table.PrimaryKey("PK_Employee", x => x.EmployeeId);
                 });
         }
 
@@ -30,7 +29,7 @@ namespace MVCApp.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Daily");
+                name: "Employee");
         }
     }
 }

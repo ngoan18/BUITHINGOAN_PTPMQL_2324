@@ -1,11 +1,11 @@
 @model MVCApp.Models.Employee
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Details";
 }
 
+<h1>Thong tin chi tiet</h1>
 
-<h3>Ban chac chan xoa chu</h3>
 <div>
     <hr />
     <dl class="row">
@@ -28,10 +28,8 @@
             @Html.DisplayFor(model => model.Age)
         </dd>
     </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="EmployeeId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.EmployeeId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
 </div>
