@@ -204,7 +204,6 @@ C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.Workspaces.reso
 C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\runtimes\alpine-arm\native\libe_sqlite3.so
 C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\runtimes\alpine-arm64\native\libe_sqlite3.so
 C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\runtimes\alpine-x64\native\libe_sqlite3.so
@@ -228,8 +227,6 @@ C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\runtimes\win-arm\native\e_sqlite3.dll
 C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\runtimes\win-x86\native\e_sqlite3.dll
-C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\PTPMQL23-24\MVCApp\obj\Debug\net7.0\MVCApp.csproj.AssemblyReference.cache
@@ -256,3 +253,11 @@ C:\PTPMQL23-24\MVCApp\obj\Debug\net7.0\refint\MVCApp.dll
 C:\PTPMQL23-24\MVCApp\obj\Debug\net7.0\MVCApp.pdb
 C:\PTPMQL23-24\MVCApp\obj\Debug\net7.0\MVCApp.genruntimeconfig.cache
 C:\PTPMQL23-24\MVCApp\obj\Debug\net7.0\ref\MVCApp.dll
+C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\EPPlus.dll
+C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\EPPlus.Interfaces.dll
+C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\EPPlus.System.Drawing.dll
+C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
+C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
+C:\PTPMQL23-24\MVCApp\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll

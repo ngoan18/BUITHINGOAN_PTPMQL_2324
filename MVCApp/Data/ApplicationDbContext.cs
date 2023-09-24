@@ -19,5 +19,7 @@ namespace MVCApp.Data
         public DbSet<MVCApp.Models.Daily> Daily { get; set; } = default!;
 
         public DbSet<MVCApp.Models.Hethongphanphoi> Hethongphanphoi { get; set; } = default!;
+
+        public DbSet<MVCApp.Models.Person> Person { get; set; } = default!;
     }
 }
