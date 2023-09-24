@@ -1,0 +1,49 @@
+@model MVCApp.Models.Daily
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Sua thong tin</h1>
+
+<h4>Daily</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Madaily" />
+            <div class="form-group">
+                <label asp-for="Tendaily" class="control-label"></label>
+                <input asp-for="Tendaily" class="form-control" />
+                <span asp-validation-for="Tendaily" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Diachi" class="control-label"></label>
+                <input asp-for="Diachi" class="form-control" />
+                <span asp-validation-for="Diachi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nguoidaidien" class="control-label"></label>
+                <input asp-for="Nguoidaidien" class="form-control" />
+                <span asp-validation-for="Nguoidaidien" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SDT" class="control-label"></label>
+                <input asp-for="SDT" class="form-control" />
+                <span asp-validation-for="SDT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
