@@ -6,93 +6,92 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVCApp.Data;
-using MVCApp.Models;
 
 namespace MVCApp.Controllers
 {
-    public class EmployeeController : Controller
+    public class StudnetController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public EmployeeController(ApplicationDbContext context)
+        public StudnetController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Employee
+        // GET: Studnet
         public async Task<IActionResult> Index()
         {
-              return _context.Employee != null ? 
-                          View(await _context.Employee.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Employee'  is null.");
+              return _context.Student != null ? 
+                          View(await _context.Student.ToListAsync()) :
+                          Problem("Entity set 'ApplicationDbContext.Student'  is null.");
         }
 
-        // GET: Employee/Details/5
+        // GET: Studnet/Details/5
         public async Task<IActionResult> Details(string id)
         {
-            if (id == null || _context.Employee == null)
+            if (id == null || _context.Student == null)
             {
                 return NotFound();
             }
 
-            var employee = await _context.Employee
-                .FirstOrDefaultAsync(m => m.EmployeeId == id);
-            if (employee == null)
+            var student = await _context.Student
+                .FirstOrDefaultAsync(m => m.StudentId == id);
+            if (student == null)
             {
                 return NotFound();
             }
 
-            return View(employee);
+            return View(student);
         }
 
-        // GET: Employee/Create
+        // GET: Studnet/Create
         public IActionResult Create()
         {
-            ViewData["PersonId"]= new SelectList(_context.Person,"PersonId","PersonId");
+            ViewData [("SDT")] =new SelectList (_context.Person,"SDT","SDT");
             return View();
         }
 
-        // POST: Employee/Create
+        // POST: Studnet/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EmployeeId,Name,SDT,Age,PersonId")] Employee employee)
+        public async Task<IActionResult> Create([Bind("StudentId,Name,Lop,Khoa,SDT")] Student student)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(employee);
+                _context.Add(student);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PersonId"] = new SelectList(_context.Person,"PersonId","PersonId",employee.PersonId);
-            return View(employee);
+            ViewData["SDT"] = new SelectList(_context.Person,"SDT","SDT", student.SDT);
+            return View(student);
         }
 
-        // GET: Employee/Edit/5
+        // GET: Studnet/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
-            if (id == null || _context.Employee == null)
+            if (id == null || _context.Student == null)
             {
                 return NotFound();
             }
 
-            var employee = await _context.Employee.FindAsync(id);
-            if (employee == null)
+            var student = await _context.Student.FindAsync(id);
+            if (student == null)
             {
                 return NotFound();
             }
-            return View(employee);
+            return View(student);
         }
 
-        // POST: Employee/Edit/5
+        // POST: Studnet/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("EmployeeId,Name,SDT,Age")] Employee employee)
+        public async Task<IActionResult> Edit(string id, [Bind("StudentId,Name,Lop,Khoa")] Student student)
         {
-            if (id != employee.EmployeeId)
+            if (id != student.StudentId)
             {
                 return NotFound();
             }
@@ -101,12 +100,12 @@ namespace MVCApp.Controllers
             {
                 try
                 {
-                    _context.Update(employee);
+                    _context.Update(student);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EmployeeExists(employee.EmployeeId))
+                    if (!StudentExists(student.StudentId))
                     {
                         return NotFound();
                     }
@@ -117,49 +116,49 @@ namespace MVCApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(employee);
+            return View(student);
         }
 
-        // GET: Employee/Delete/5
+        // GET: Studnet/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
-            if (id == null || _context.Employee == null)
+            if (id == null || _context.Student == null)
             {
                 return NotFound();
             }
 
-            var employee = await _context.Employee
-                .FirstOrDefaultAsync(m => m.EmployeeId == id);
-            if (employee == null)
+            var student = await _context.Student
+                .FirstOrDefaultAsync(m => m.StudentId == id);
+            if (student == null)
             {
                 return NotFound();
             }
 
-            return View(employee);
+            return View(student);
         }
 
-        // POST: Employee/Delete/5
+        // POST: Studnet/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            if (_context.Employee == null)
+            if (_context.Student == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.Employee'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.Student'  is null.");
             }
-            var employee = await _context.Employee.FindAsync(id);
-            if (employee != null)
+            var student = await _context.Student.FindAsync(id);
+            if (student != null)
             {
-                _context.Employee.Remove(employee);
+                _context.Student.Remove(student);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool EmployeeExists(string id)
+        private bool StudentExists(string id)
         {
-          return (_context.Employee?.Any(e => e.EmployeeId == id)).GetValueOrDefault();
+          return (_context.Student?.Any(e => e.StudentId == id)).GetValueOrDefault();
         }
     }
 }

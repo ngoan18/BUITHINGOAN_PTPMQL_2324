@@ -1,4 +1,8 @@
 @model IEnumerable<MVCApp.Models.Daily>
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+
+
 
 @{
     ViewData["Title"] = "Index";
@@ -8,10 +12,16 @@
 
 <p>
     <a asp-action="Create">Them moi</a>
+    <br>
+    <a asp-action="Upload">Upload</a>
+    <a class="btn-btn-sucess" asp-action="Download">Download</a>
 </p>
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Madaily)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Tendaily)
             </th>
@@ -30,6 +40,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+             <td>
+                @Html.DisplayFor(modelItem => item.Madaily)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Tendaily)
             </td>
@@ -43,11 +56,37 @@
                 @Html.DisplayFor(modelItem => item.SDT)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Madaily">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Madaily">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Madaily">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Madaily">Sua</a> |
+                <a asp-action="Details" asp-route-id="@item.Madaily">Chi tiet</a> |
+                <a asp-action="Delete" asp-route-id="@item.Madaily">Xoa</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+@using (Html.BeginForm("Index", "Daily", FormMethod.Get, new {id = "form1"}))
+{
+    <div class="row">
+        <div class="col-md-11">
+            @Html.PagedListPager((IPagedList) Model, page => Url.Action("Index", new {page = page, 
+            pageSize = ViewBag.psize}),
+            new X.PagedList.Web.Common.PagedListRenderOptions { LiElementClasses = new string[] {"page-item"}, 
+            PageClasses = new string[] { "page-link" }})
+
+        </div>
+        <div class = "col-md-1">
+            @Html.DropDownList("pageSize",null,new{ @class= "form-select"})
+
+        </div>
+
+    </div>
+}
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+    $(document).ready(function){
+        $("#pageSize"). change(function () {
+            $("#form1").submit();
+        });
+    });
+</script>
+

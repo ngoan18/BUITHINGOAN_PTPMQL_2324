@@ -10,4 +10,5 @@ public class Daily
     public string Diachi { get; set; }
     public string Nguoidaidien { get; set; }
     public string SDT { get; set; }
+    
 }

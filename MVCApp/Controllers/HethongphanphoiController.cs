@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVCApp.Data;
 using MVCApp.Models;
+using MVCApp.Models.Process;
+using OfficeOpenXml;
+using X.PagedList;
 
 namespace MVCApp.Controllers
 {
@@ -20,11 +23,22 @@ namespace MVCApp.Controllers
         }
 
         // GET: Hethongphanphoi
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index( int? page, int? PageSize )
         {
-              return _context.Hethongphanphoi != null ? 
-                          View(await _context.Hethongphanphoi.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Hethongphanphoi'  is null.");
+            ViewBag.PageSize = new List<SelectListItem>()
+        {
+            new SelectListItem() {Value="3", Text = "3"},
+            new SelectListItem() {Value="5", Text = "5"},
+            new SelectListItem() {Value="10", Text = "10"},
+            new SelectListItem() {Value="15", Text = "15"},
+            new SelectListItem() {Value="25", Text = "25"},
+
+
+        };
+        int pagesize = (PageSize ?? 3);
+        ViewBag.psize = pagesize;
+        var model = _context.Hethongphanphoi.ToList().ToPagedList (page ?? 1, pagesize);
+        return View (model);
         }
 
         // GET: Hethongphanphoi/Details/5
@@ -158,6 +172,70 @@ namespace MVCApp.Controllers
         private bool HethongphanphoiExists(string id)
         {
           return (_context.Hethongphanphoi?.Any(e => e.MaHTPP == id)).GetValueOrDefault();
+        }
+    private ExcelProcess _excelProcess = new ExcelProcess();     
+    public async Task<IActionResult> Upload()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult>Upload(IFormFile file)
+        {
+            if (file!=null)
+            {
+                string fileExtension = Path.GetExtension(file.FileName);
+                if (fileExtension != ".xls" && fileExtension != ".xlsx")
+                {
+                    ModelState.AddModelError("", "Please choose excel file to upload!");
+                }
+                else
+                {
+                    //rename file when upload to sever
+                    var fileName = DateTime.Now.ToShortTimeString() + fileExtension;
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory() + "/Uploads/Excels", fileName);
+                    var fileLocation = new FileInfo(filePath).ToString();
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        //save file to server
+                        await file.CopyToAsync(stream);
+                        //read data from file and write to database
+                        var dt = _excelProcess.ExcelToDataTable(fileLocation);
+                        //dùng vòng l?p for d? d?c d? li?u d?ng hd
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            //create a new Student object
+                            var htpp = new Hethongphanphoi();
+                            //set values for attribiutes
+                            htpp.MaHTPP = dt.Rows[i][0].ToString();
+                            htpp.TenHTPP = dt.Rows[i][1].ToString();
+                             
+                            //add oject to context
+                            _context.Hethongphanphoi.Add(htpp);
+                        }
+                        //save to database
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(Index));
+                    }
+                }
+            }
+            return View();
+        }
+
+         public IActionResult Download()
+        {
+            var fileName = "YourFileName" + ".xlsx";
+            using (ExcelPackage excelPackage =new ExcelPackage())
+            {
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Sheet 1");
+                worksheet.Cells["A1"].Value = "MaHTPP";
+                worksheet.Cells["B1"].Value = "TenHTPP";
+
+                var htppList = _context.Hethongphanphoi.ToList();
+                worksheet.Cells["A2"].LoadFromCollection(htppList);
+                var stream = new MemoryStream(excelPackage.GetAsByteArray());
+                return File (stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+            }
         }
     }
 }

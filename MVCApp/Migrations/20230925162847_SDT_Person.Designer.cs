@@ -2,6 +2,7 @@
 using MVCApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230925162847_SDT_Person")]
+    partial class SDT_Person
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.11");
@@ -105,50 +108,11 @@ namespace MVCApp.Migrations
                     b.ToTable("Person");
                 });
 
-            modelBuilder.Entity("Student", b =>
-                {
-                    b.Property<string>("StudentId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Khoa")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Lop")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("SDT")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("StudentId");
-
-                    b.HasIndex("SDT");
-
-                    b.ToTable("Student");
-                });
-
             modelBuilder.Entity("MVCApp.Models.Employee", b =>
                 {
                     b.HasOne("MVCApp.Models.Person", "Person")
                         .WithMany()
                         .HasForeignKey("PersonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Person");
-                });
-
-            modelBuilder.Entity("Student", b =>
-                {
-                    b.HasOne("MVCApp.Models.Person", "Person")
-                        .WithMany()
-                        .HasForeignKey("SDT")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

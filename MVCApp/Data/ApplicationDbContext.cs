@@ -21,5 +21,7 @@ namespace MVCApp.Data
         public DbSet<MVCApp.Models.Hethongphanphoi> Hethongphanphoi { get; set; } = default!;
 
         public DbSet<MVCApp.Models.Person> Person { get; set; } = default!;
+
+        public DbSet<Student> Student { get; set; } = default!;
     }
 }

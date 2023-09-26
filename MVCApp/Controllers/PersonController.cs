@@ -75,7 +75,7 @@ namespace MVCApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PersonId,FullName,Address")] Person person)
+        public async Task<IActionResult> Create([Bind("PersonId,FullName,Address,SDT")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -107,7 +107,7 @@ namespace MVCApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("PersonId,FullName,Address")] Person person)
+        public async Task<IActionResult> Edit(string id, [Bind("PersonId,FullName,Address,SDT")] Person person)
         {
             if (id != person.PersonId)
             {
@@ -216,6 +216,7 @@ namespace MVCApp.Controllers
                             person.PersonId = dt.Rows[i][0].ToString();
                             person.FullName = dt.Rows[i][1].ToString();
                             person.Address = dt.Rows[i][1].ToString();
+                             person.SDT = dt.Rows[i][1].ToString();
                              
                             //add oject to context
                             _context.Person.Add(person);
@@ -237,6 +238,7 @@ namespace MVCApp.Controllers
                 worksheet.Cells["A1"].Value = "PersomId";
                 worksheet.Cells["B1"].Value = "FullName";
                 worksheet.Cells["C1"].Value = "Address";
+                 worksheet.Cells["C1"].Value = "SDT";
 
                 var personList = _context.Person.ToList();
                 worksheet.Cells["A2"].LoadFromCollection(personList);
