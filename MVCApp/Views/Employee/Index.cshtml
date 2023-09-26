@@ -4,20 +4,14 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Bang thong tin chi tiet</h1>
+<h1>Bang thông tin</h1>
 
 <p>
-    <a asp-action="Create">Them moi</a>
+    <a asp-action="Create">Thêm mới</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-             <th>
-                @Html.DisplayNameFor(model => model.EmployeeId)
-            </th>
-             <th>
-                @Html.DisplayNameFor(model => model.PersonId)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -27,18 +21,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.Age)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Person.FullName)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-             <td>
-                @Html.DisplayFor(modelItem => item.EmployeeId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PersonId)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
@@ -49,9 +40,12 @@
                 @Html.DisplayFor(modelItem => item.Age)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.EmployeeId">sua</a> |
-                <a asp-action="Details" asp-route-id="@item.EmployeeId">chi tiet</a> |
-                <a asp-action="Delete" asp-route-id="@item.EmployeeId">Xoa</a>
+                @Html.DisplayFor(modelItem => item.Person.FullName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.EmployeeId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.EmployeeId">Delete</a>
             </td>
         </tr>
 }

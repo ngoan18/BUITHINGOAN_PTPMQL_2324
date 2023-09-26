@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230924054620_Table_Person")]
-    partial class Table_Person
+    [Migration("20230926033218_Create_ForeignKey")]
+    partial class Create_ForeignKey
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -57,11 +57,17 @@ namespace MVCApp.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("PersonId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("SDT")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("EmployeeId");
+
+                    b.HasIndex("PersonId");
 
                     b.ToTable("Employee");
                 });
@@ -80,6 +86,26 @@ namespace MVCApp.Migrations
                     b.ToTable("Hethongphanphoi");
                 });
 
+            modelBuilder.Entity("MVCApp.Models.Hopdong", b =>
+                {
+                    b.Property<string>("Mahp")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Madaily")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Tenhp")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Mahp");
+
+                    b.HasIndex("Madaily");
+
+                    b.ToTable("Hopdong");
+                });
+
             modelBuilder.Entity("MVCApp.Models.Person", b =>
                 {
                     b.Property<string>("PersonId")
@@ -93,9 +119,74 @@ namespace MVCApp.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("SDT")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.HasKey("PersonId");
 
                     b.ToTable("Person");
+                });
+
+            modelBuilder.Entity("Student", b =>
+                {
+                    b.Property<string>("StudentId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Khoa")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Lop")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SDT")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("StudentId");
+
+                    b.HasIndex("SDT");
+
+                    b.ToTable("Student");
+                });
+
+            modelBuilder.Entity("MVCApp.Models.Employee", b =>
+                {
+                    b.HasOne("MVCApp.Models.Person", "Person")
+                        .WithMany()
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Person");
+                });
+
+            modelBuilder.Entity("MVCApp.Models.Hopdong", b =>
+                {
+                    b.HasOne("MVCApp.Models.Daily", "Daily")
+                        .WithMany()
+                        .HasForeignKey("Madaily")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Daily");
+                });
+
+            modelBuilder.Entity("Student", b =>
+                {
+                    b.HasOne("MVCApp.Models.Person", "Person")
+                        .WithMany()
+                        .HasForeignKey("SDT")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Person");
                 });
 #pragma warning restore 612, 618
         }

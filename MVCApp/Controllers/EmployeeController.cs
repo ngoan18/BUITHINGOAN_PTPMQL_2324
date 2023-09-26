@@ -22,9 +22,8 @@ namespace MVCApp.Controllers
         // GET: Employee
         public async Task<IActionResult> Index()
         {
-              return _context.Employee != null ? 
-                          View(await _context.Employee.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Employee'  is null.");
+            var applicationDbContext = _context.Employee.Include(e => e.Person);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Employee/Details/5
@@ -36,6 +35,7 @@ namespace MVCApp.Controllers
             }
 
             var employee = await _context.Employee
+                .Include(e => e.Person)
                 .FirstOrDefaultAsync(m => m.EmployeeId == id);
             if (employee == null)
             {
@@ -48,7 +48,7 @@ namespace MVCApp.Controllers
         // GET: Employee/Create
         public IActionResult Create()
         {
-            ViewData["PersonId"]= new SelectList(_context.Person,"PersonId","PersonId");
+            ViewData["PersonId"] = new SelectList(_context.Person, "PersonId", "FullName");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace MVCApp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PersonId"] = new SelectList(_context.Person,"PersonId","PersonId",employee.PersonId);
+            ViewData["PersonId"] = new SelectList(_context.Person, "PersonId", "FullName", employee.PersonId);
             return View(employee);
         }
 
@@ -82,6 +82,7 @@ namespace MVCApp.Controllers
             {
                 return NotFound();
             }
+            ViewData["PersonId"] = new SelectList(_context.Person, "PersonId", "PersonId", employee.PersonId);
             return View(employee);
         }
 
@@ -90,7 +91,7 @@ namespace MVCApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("EmployeeId,Name,SDT,Age")] Employee employee)
+        public async Task<IActionResult> Edit(string id, [Bind("EmployeeId,Name,SDT,Age,PersonId")] Employee employee)
         {
             if (id != employee.EmployeeId)
             {
@@ -117,6 +118,7 @@ namespace MVCApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["PersonId"] = new SelectList(_context.Person, "PersonId", "PersonId", employee.PersonId);
             return View(employee);
         }
 
@@ -129,6 +131,7 @@ namespace MVCApp.Controllers
             }
 
             var employee = await _context.Employee
+                .Include(e => e.Person)
                 .FirstOrDefaultAsync(m => m.EmployeeId == id);
             if (employee == null)
             {
@@ -161,5 +164,8 @@ namespace MVCApp.Controllers
         {
           return (_context.Employee?.Any(e => e.EmployeeId == id)).GetValueOrDefault();
         }
+   
+   
     }
+
 }

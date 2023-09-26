@@ -92,6 +92,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/PTPMQL23-24/MVCApp/Views/Hopdong/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9wZG9uZ1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PTPMQL23-24/MVCApp/Views/Hopdong/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9wZG9uZ1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PTPMQL23-24/MVCApp/Views/Hopdong/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9wZG9uZ1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PTPMQL23-24/MVCApp/Views/Hopdong/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9wZG9uZ1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PTPMQL23-24/MVCApp/Views/Hopdong/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9wZG9uZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/PTPMQL23-24/MVCApp/Views/Person/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -124,24 +144,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/PTPMQL23-24/MVCApp/Views/Studnet/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZG5ldFxDcmVhdGUuY3NodG1s
+[C:/PTPMQL23-24/MVCApp/Views/Student/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/PTPMQL23-24/MVCApp/Views/Studnet/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZG5ldFxEZWxldGUuY3NodG1s
+[C:/PTPMQL23-24/MVCApp/Views/Student/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/PTPMQL23-24/MVCApp/Views/Studnet/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZG5ldFxEZXRhaWxzLmNzaHRtbA==
+[C:/PTPMQL23-24/MVCApp/Views/Student/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/PTPMQL23-24/MVCApp/Views/Studnet/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZG5ldFxFZGl0LmNzaHRtbA==
+[C:/PTPMQL23-24/MVCApp/Views/Student/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/PTPMQL23-24/MVCApp/Views/Studnet/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZG5ldFxJbmRleC5jc2h0bWw=
+[C:/PTPMQL23-24/MVCApp/Views/Student/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/PTPMQL23-24/MVCApp/Views/_ViewImports.cshtml]

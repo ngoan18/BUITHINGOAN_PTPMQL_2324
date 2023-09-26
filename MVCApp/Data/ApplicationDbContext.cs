@@ -14,14 +14,16 @@ namespace MVCApp.Data
         {
         }
 
-        public DbSet<MVCApp.Models.Employee> Employee { get; set; } = default!;
+        public DbSet<Employee> Employee { get; set; } = default!;
 
-        public DbSet<MVCApp.Models.Daily> Daily { get; set; } = default!;
+        public DbSet<Daily> Daily { get; set; } = default!;
 
-        public DbSet<MVCApp.Models.Hethongphanphoi> Hethongphanphoi { get; set; } = default!;
+        public DbSet<Hethongphanphoi> Hethongphanphoi { get; set; } = default!;
 
-        public DbSet<MVCApp.Models.Person> Person { get; set; } = default!;
+        public DbSet<Person> Person { get; set; } = default!;
 
         public DbSet<Student> Student { get; set; } = default!;
+
+        public DbSet<Hopdong> Hopdong { get; set; } = default!;
     }
 }

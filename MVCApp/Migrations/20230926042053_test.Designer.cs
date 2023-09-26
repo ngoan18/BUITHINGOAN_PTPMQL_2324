@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230926020306_Foreignkey_Student")]
-    partial class Foreignkey_Student
+    [Migration("20230926042053_test")]
+    partial class test
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -86,6 +86,26 @@ namespace MVCApp.Migrations
                     b.ToTable("Hethongphanphoi");
                 });
 
+            modelBuilder.Entity("MVCApp.Models.Hopdong", b =>
+                {
+                    b.Property<string>("Mahp")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Madaily")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Tenhp")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Mahp");
+
+                    b.HasIndex("Madaily");
+
+                    b.ToTable("Hopdong");
+                });
+
             modelBuilder.Entity("MVCApp.Models.Person", b =>
                 {
                     b.Property<string>("PersonId")
@@ -125,13 +145,7 @@ namespace MVCApp.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("SDT")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.HasKey("StudentId");
-
-                    b.HasIndex("SDT");
 
                     b.ToTable("Student");
                 });
@@ -147,15 +161,15 @@ namespace MVCApp.Migrations
                     b.Navigation("Person");
                 });
 
-            modelBuilder.Entity("Student", b =>
+            modelBuilder.Entity("MVCApp.Models.Hopdong", b =>
                 {
-                    b.HasOne("MVCApp.Models.Person", "Person")
+                    b.HasOne("MVCApp.Models.Daily", "Daily")
                         .WithMany()
-                        .HasForeignKey("SDT")
+                        .HasForeignKey("Madaily")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Person");
+                    b.Navigation("Daily");
                 });
 #pragma warning restore 612, 618
         }

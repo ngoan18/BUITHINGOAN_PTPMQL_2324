@@ -6,17 +6,20 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVCApp.Data;
+using MVCApp.Models;
+using MVCApp.Models.Process;
 
 namespace MVCApp.Controllers
 {
-    public class StudnetController : Controller
+    public class StudentController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public StudnetController(ApplicationDbContext context)
+        public StudentController(ApplicationDbContext context)
         {
             _context = context;
         }
+        private ExcelProcess _excelProcess =new ExcelProcess();
 
         // GET: Studnet
         public async Task<IActionResult> Index()
@@ -47,7 +50,7 @@ namespace MVCApp.Controllers
         // GET: Studnet/Create
         public IActionResult Create()
         {
-            ViewData [("SDT")] =new SelectList (_context.Person,"SDT","SDT");
+           
             return View();
         }
 
@@ -56,7 +59,7 @@ namespace MVCApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("StudentId,Name,Lop,Khoa,SDT")] Student student)
+        public async Task<IActionResult> Create([Bind("StudentId,Name,Lop,Khoa")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +67,6 @@ namespace MVCApp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["SDT"] = new SelectList(_context.Person,"SDT","SDT", student.SDT);
             return View(student);
         }
 
@@ -160,5 +162,56 @@ namespace MVCApp.Controllers
         {
           return (_context.Student?.Any(e => e.StudentId == id)).GetValueOrDefault();
         }
+         public async Task<IActionResult> Upload()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult>Upload(IFormFile file)
+        {
+            if (file!=null)
+            {
+                string fileExtension = Path.GetExtension(file.FileName);
+                if (fileExtension != ".xls" && fileExtension != ".xlsx")
+                {
+                    ModelState.AddModelError("", "Please choose excel file to upload!");
+                }
+                else
+                {
+                    //rename file when upload to sever
+                    var fileName = DateTime.Now.ToShortTimeString() + fileExtension;
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory() + "/Uploads/Excels", fileName);
+                    var fileLocation = new FileInfo(filePath).ToString();
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        //save file to server
+                        await file.CopyToAsync(stream);
+                        //read data from file and write to database
+                        var dt = _excelProcess.ExcelToDataTable(fileLocation);
+                        //dùng vòng l?p for d? d?c d? li?u d?ng hd
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            //create a new Student object
+                            var std = new Student();
+                            //set values for attribiutes
+                            std.StudentId = dt.Rows[i][0].ToString();
+                            std.Name = dt.Rows[i][1].ToString();
+                            std.Lop = dt.Rows[i][0].ToString();
+                            std.Khoa = dt.Rows[i][1].ToString();
+                             
+                            //add oject to context
+                            _context.Student.Add(std);
+                        }
+                        //save to database
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(Index));
+                    }
+                }
+            }
+            return View();
+    }
+    
+    
     }
 }

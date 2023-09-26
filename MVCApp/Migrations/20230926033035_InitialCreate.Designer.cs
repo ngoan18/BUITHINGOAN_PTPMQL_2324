@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230926022125_Table_Student")]
-    partial class Table_Student
+    [Migration("20230926033035_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -57,17 +57,11 @@ namespace MVCApp.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("PersonId")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("SDT")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("EmployeeId");
-
-                    b.HasIndex("PersonId");
 
                     b.ToTable("Employee");
                 });
@@ -84,6 +78,26 @@ namespace MVCApp.Migrations
                     b.HasKey("MaHTPP");
 
                     b.ToTable("Hethongphanphoi");
+                });
+
+            modelBuilder.Entity("MVCApp.Models.Hopdong", b =>
+                {
+                    b.Property<string>("Mahp")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Madaily")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Tenhp")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Mahp");
+
+                    b.HasIndex("Madaily");
+
+                    b.ToTable("Hopdong");
                 });
 
             modelBuilder.Entity("MVCApp.Models.Person", b =>
@@ -136,15 +150,15 @@ namespace MVCApp.Migrations
                     b.ToTable("Student");
                 });
 
-            modelBuilder.Entity("MVCApp.Models.Employee", b =>
+            modelBuilder.Entity("MVCApp.Models.Hopdong", b =>
                 {
-                    b.HasOne("MVCApp.Models.Person", "Person")
+                    b.HasOne("MVCApp.Models.Daily", "Daily")
                         .WithMany()
-                        .HasForeignKey("PersonId")
+                        .HasForeignKey("Madaily")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Person");
+                    b.Navigation("Daily");
                 });
 
             modelBuilder.Entity("Student", b =>

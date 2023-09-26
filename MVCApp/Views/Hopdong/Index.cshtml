@@ -1,0 +1,47 @@
+@model IEnumerable<MVCApp.Models.Hopdong>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Bang thong tin</h1>
+
+<p>
+    <a asp-action="Create">Them moi</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Madaily)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.Mahp)
+            </th>
+              <th>
+                @Html.DisplayNameFor(model => model.Tenhp)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Madaily)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mahp)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.Tenhp)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Mahp">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Mahp">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Mahp">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

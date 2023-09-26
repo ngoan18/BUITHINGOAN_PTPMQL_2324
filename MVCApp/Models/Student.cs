@@ -8,7 +8,4 @@ public class Student
      public string Name { get; set; }
     public string Lop { get; set; }
     public string Khoa { get; set; }
-    public string SDT { get; set; }
-    [ForeignKey("SDT")]
-    public Person? Person { get; set; }
 }
