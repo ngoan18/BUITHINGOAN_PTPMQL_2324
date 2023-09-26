@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using MVCApp.Data;
 using MVCApp.Models;
 using MVCApp.Models.Process;
+using OfficeOpenXml;
 
 namespace MVCApp.Controllers
 {
@@ -210,8 +211,25 @@ namespace MVCApp.Controllers
                 }
             }
             return View();
-    }
-    
+        }
+
+         public IActionResult Download()
+        {
+            var fileName = "YourFileName" + ".xlsx";
+            using (ExcelPackage excelPackage =new ExcelPackage())
+            {
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Sheet 1");
+                worksheet.Cells["A1"].Value = "StudentId";
+                worksheet.Cells["B1"].Value = "Name";
+                worksheet.Cells["C1"].Value = "Lop";
+                 worksheet.Cells["C1"].Value = "Khoa";
+
+                var stdList = _context.Student.ToList();
+                worksheet.Cells["A2"].LoadFromCollection(stdList);
+                var stream = new MemoryStream(excelPackage.GetAsByteArray());
+                return File (stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+            }
+        }
     
     }
 }
