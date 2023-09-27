@@ -11185,11 +11185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\PTPMQL23-24\\MVCApp\\MVCApp.csproj",
+      "projectUniqueName": "e:\\PTPMQL23-24\\MVCApp\\MVCApp.csproj",
       "projectName": "MVCApp",
-      "projectPath": "C:\\PTPMQL23-24\\MVCApp\\MVCApp.csproj",
+      "projectPath": "e:\\PTPMQL23-24\\MVCApp\\MVCApp.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\PTPMQL23-24\\MVCApp\\obj\\",
+      "outputPath": "e:\\PTPMQL23-24\\MVCApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"

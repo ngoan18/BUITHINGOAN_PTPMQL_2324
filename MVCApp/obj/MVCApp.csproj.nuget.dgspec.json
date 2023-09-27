@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\PTPMQL23-24\\MVCApp\\MVCApp.csproj": {}
+    "E:\\PTPMQL23-24\\MVCApp\\MVCApp.csproj": {}
   },
   "projects": {
-    "C:\\PTPMQL23-24\\MVCApp\\MVCApp.csproj": {
+    "E:\\PTPMQL23-24\\MVCApp\\MVCApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\PTPMQL23-24\\MVCApp\\MVCApp.csproj",
+        "projectUniqueName": "E:\\PTPMQL23-24\\MVCApp\\MVCApp.csproj",
         "projectName": "MVCApp",
-        "projectPath": "C:\\PTPMQL23-24\\MVCApp\\MVCApp.csproj",
+        "projectPath": "E:\\PTPMQL23-24\\MVCApp\\MVCApp.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\PTPMQL23-24\\MVCApp\\obj\\",
+        "outputPath": "E:\\PTPMQL23-24\\MVCApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
